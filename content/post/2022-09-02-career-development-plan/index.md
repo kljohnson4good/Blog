@@ -10,10 +10,12 @@ date: '2022-09-02'
 
 "<span style="background-color: DarkSlateGray"><font size="4" color="Gold"><em>If you don't know where you are going, you might wind up someplace else</em></font></span>" --Yogi Berra
 
+This tutorial will provide an introduction and procedural methodology to creating a development plan.
+
 # Why Should You Have A Career Development Plan?
 What defines a successful career <u>for you</u>?
 
-Does everybody need a formal plan in order to be successful?  No.  There's such a thing as luck too.  But I bet most people already have a plan in some variant or another.  For example have you ever written career related objectives on a TODO list or in your New Years resolutions? 
+Does everybody need a plan in order to be successful?  No.  There's such a thing as luck too.  But I bet most people already have a plan in some variant or another.  For example have you ever written career related objectives on a TODO list or in your New Years resolutions? 
 
 Having a plan serves to remind you of the bigger goals that you want (or think you want) out of life so that you continue to work towards them one day at a time.  The risk of not having a plan is looking back years later and realizing you got way off track and now feel the pull of midlife crisis bearing down on you.  Panic creeps in and you might start wondering where it all went wrong, what the meaning of life is and how to get things back on track.
 
@@ -21,22 +23,20 @@ Are plans bulletproof?  No.  But they'll help keep you progressing on a path tha
 
 "<span style="background-color: DarkSlateGray"><font color="Gold"><em>Luck is when preparation meets opportunity</em></font></span>" --Seneca
 
-OK, but why should you take any advice from me?  After all, I'm not a CEO, motivational speaker nor written a best selling book.  Great point (and maybe none of those things YET :-)!  Well to be honest, I didn't use this process until recently to help me through a difficult time in my career.  So I wrote this in hopes of helping others get to to where they want to go quicker than I did or help get out of a place of feeling stuck.
+OK, but why should you take any advice from me?  After all, I'm not a CEO, motivational speaker nor written a best selling book.  Great point (and maybe none of those things YET :-)!  Well to be honest, I didn't use this process until recently to help me through a difficult time in my career.  So I wrote this procedural approach to creating a development plan in hopes of helping others get to where they want to go quicker than I did or help get out of a place of feeling stuck.
 
 # What Is A Career Development Plan?
-A development plan has two major components: The **process** and the **plan** itself.  
+There are two major components: The **process** and the **plan** itself.  
 
 ## The Process
 <iframe style="float: right;" src="https://assets.pinterest.com/ext/embed.html?id=558939003724582226" height="336" width="236" frameborder="0" scrolling="no" ></iframe>
 
-The process serves to break down large goals (ex: end of career/retirement or end of life) into smaller/short-term milestones along with actional steps you can take on a daily/weekly/monthly basis.
+The process serves to break down large goals (ex: end of career/retirement or end of life) into smaller, short-term milestones along with actional steps you can take on a daily/weekly/monthly basis.
 
-I know sometimes taking small steps doesn't feel like big progress, but as somebody else said much better:
+I know sometimes taking small steps doesn't feel like big progress, but as somebody else said much better: "*little by little becomes a lot*".
 
 ## The Plan
-The plan is just a list of goals and actions. 
-
-The format of the list can be whatever works for you.  It can be formally documented or as informal as a whiteboard or sticky notes.  The point is to make it work for you.  
+The plan is just a list of goals and actions. The format can be whatever works for you.  It can be formally documented or as informal as a whiteboard or sticky notes.  The point is to make it work for you.  
 
 # Tools For The Journey
 <p align="center" style="float: left; padding-right:10px">
@@ -53,22 +53,22 @@ This tutorial will help you build your own unique **compass**, **landscape** and
 
 Your journey should be guided by your values. 
 
-If you're having a difficult time coming up with what your values are, then you're not alone.  Yes, it's hard and you'll keep thinking about it and updating them until you feel "just right" about them.  Some helpful tips to get started:
+If you're having a difficult time coming up with these, then you're not alone.  Yes, it's hard to figure out who you are and why you want what you want.  You'll probably keep thinking about it and updating them until you feel "just right" about it.  Some helpful tips to get started:
 1. What experiences fulfill you, bring you joy and happiness?  
-2. Who your role models are and why?  What is it about them that you admire and seek to find in yourself?
+2. Who your role models and why?  What is it about them that you admire and seek to amplify in yourself?
 
 ### Understand The Landscape
 <p align="center" style="float: right; padding-right:10px">
   <img src="./resources/TOP.png" alt="drawing" style="width:300px;"/>
 </p>
 
-The landscape defines oundaries of where you go.  The TOP model is popular and can easily be Googled to get more details.  TOP stands for: **Talent**, **Opportunity** and **Passion**.  The concept is that when the 3 intersect, this is where you can have your best career.  
+The landscape helps you see which routes will be easier and which will be more difficult to traverse.  The TOP model is popular and can easily be Googled to get more details.  TOP stands for: **Talent**, **Opportunity** and **Passion**.  The concept is that when the 3 intersect, this is where you can have your best career.  
 
-Take a moment to think about your talents (i.e. strenghs) and passions (things you have an affinity to do and would probably even do them for free).  If you're having trouble knowing your talents, it may help to get feedback from your manager, mentor, colleagues or friends.
+Take a moment to think about your talents (i.e. strenghs) and passions (things you have an affinity to do and would probably even do them for free).  If you're having trouble defining your talents, it may help to get feedback from your manager, mentor, colleagues or friends.  There are also assessments like [StrengthsFinder](https://www.gallup.com/cliftonstrengths/en/254033/strengthsfinder.aspx).
 
-The opportunites available are probably going to be bound by the company you work for and the particular team you're in.  Talk to your manager or think about how to **Job Craft** your role in a way that can best overlap with your talents and passions.
+The opportunites available are going to be restricted by the company you work for, your boss and the particular team you're in. Talk to your manager or think about how to **Job Craft** your role in a way that can best overlap with your talents and passions. Align opportunities with business objectives for maximum impact. 
 
-Don't forget that the landscape is not static!  Adopt a **growth mindset**, to know that anything is possible.
+Don't forget that the landscape is not static!  Adopt a **growth mindset**, to believe that anything is possible.
 
 ### Map Orientation
 The Map is also going to be shaped by your company and the particular team you're in.  This defines the path to upward mobility and should define required expectations. 
@@ -161,7 +161,7 @@ Remember that your plan is not a contract.  It's OK if you don't do everything o
 
 This process should be repeated regularly because your personal values and goals will change over time, not to mention the landscape and map may as well. (My personal method leverages new years as an annual checkpoint to write down my bigger aspirations in a binder as well as record unexpected achievements that occurred during the year.  Then my quarterly work related review sessions with my manager serve to remind me to double check the plan against my current situation)
 
-# Final Words
+# Closing Thoughts
 
 In order to be truly successful, try not to be guided by somebody else's verson of success.  Find yourself first.
 
