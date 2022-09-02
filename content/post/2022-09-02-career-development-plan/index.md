@@ -153,7 +153,7 @@ Sometimes by simply following your compass (doing things that bring your fulfill
 
 # Where To Next?
 
-Congratulations!  If you've gotten this far, then you have a good start on your development plan journey.  But it doesn't end here, nor does it stop once you reach a destination.  
+Congratulations!  If you've gotten this far, then you have a good start on planning your career journey.  But it doesn't end here, nor does it stop once you reach a destination.  
 
 Use your goals, talents, passions and opportunities to have meaningful career development conversations with your manager or mentor.  It's important that others who are in positions to help you know what you want.  Say it, then repeat it, make sure you're heard :-) 
 
@@ -176,6 +176,9 @@ In order to be truly successful, try not to be guided by somebody else's verson 
 Images:
 * <a href="https://www.freepnglogos.com/pics/road">Road from freepnglogos.com</a>
 * Photo by cottonbro: https://www.pexels.com/photo/scouts-with-a-map-and-a-compass-9292813/
+
+# Resources
+If it is helpful for you, I have created a Microsoft Word document template to assist this development plan and can be downloaded from the github site. [Career Development Worksheet.docx](https://github.com/kljohnson4good/Blog/blob/main/Career%20Development%20Worksheet.docx)
 
 <!--- Good References
 * https://css-tricks.com/snippets/css/named-colors-and-hex-equivalents/
