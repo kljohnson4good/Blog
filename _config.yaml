@@ -17,9 +17,9 @@ menu:
     - name: About
       url: /about/
     - name: GitHub
-      url: https://github.com/rstudio/blogdown
-    - name: Twitter
-      url: https://twitter.com/rstudio
+      url: https://github.com/kljohnson4good/Blog
+    - name: Linked-In
+      url: https://www.linkedin.com/in/kristi-johnson-b315a9157/
 params:
   MathJaxCDN: //cdnjs.cloudflare.com/ajax/libs
   MathJaxVersion: 2.7.5
@@ -34,10 +34,12 @@ params:
   logo:
     alt: Logo
     height: 50
-    url: logo.png
+    url: logo-home-png-7411.png
     width: 50
 markup:
   defaultMarkdownHandler: goldmark
   goldmark:
     renderer:
       unsafe: yes
+
+
