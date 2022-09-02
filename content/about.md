@@ -5,7 +5,7 @@ title: About
 
 <u>Credits First</u>
 <br/>
-This site was inspired by the ASA Committee on Career Development [Portfolio Project](https://ccdportfolio.netlify.app) written in Amstat news June 2022.  Source codeand method follows the fantastic tutorial [bookdown](https://bookdown.org/yihui/blogdown/) by Yihui Xie, Amber Thomas, Alison Presmanes Hill (2022-08-08).
+This site was inspired by the ASA Committee on Career Development [Portfolio Project](https://ccdportfolio.netlify.app) written in Amstat news June 2022.  Source code and method follows the fantastic tutorial [bookdown](https://bookdown.org/yihui/blogdown/) by Yihui Xie, Amber Thomas, Alison Presmanes Hill (2022-08-08).
 <br/>
 Icon sources:
 * <a href="https://www.freepnglogos.com/pics/logo-home-png">Logo Home from freepnglogos.com</a>

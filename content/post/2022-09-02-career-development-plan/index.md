@@ -1,6 +1,7 @@
 ---
-date: "2022-09-02T12:09:13-06:00"
 title: Career Development Plan
+author: Kristi Johnson
+date: '2022-09-02'
 ---
 
 <h1 style="text-align: center;">Preparing For Your Career Roadtrip</h1>
@@ -150,7 +151,7 @@ Sometimes by simply following your compass (doing things that bring your fulfill
 </p>
 "<span style="background-color: DarkSlateGray"><font color="Gold"><em>You can't connect the dots looking forward; you can only connect them looking backwards.  So you have to trust that the dots will somehow connect in your future</em></font></span>" --Steve Jobs
 
-# Summary
+# Where To Next?
 
 Congratulations!  If you've gotten this far, then you have a good start on your development plan journey.  But it doesn't end here, nor does it stop once you reach a destination.  
 
@@ -159,6 +160,10 @@ Use your goals, talents, passions and opportunities to have meaningful career de
 Remember that your plan is not a contract.  It's OK if you don't do everything on the list or don't execute them exactly as planned.
 
 This process should be repeated regularly because your personal values and goals will change over time, not to mention the landscape and map may as well. (My personal method leverages new years as an annual checkpoint to write down my bigger aspirations in a binder as well as record unexpected achievements that occurred during the year.  Then my quarterly work related review sessions with my manager serve to remind me to double check the plan against my current situation)
+
+# Final Words
+
+In order to be truly successful, try not to be guided by somebody else's verson of success.  Find yourself first.
 
 1. Know Yourself
 2. Know your map and landscape
