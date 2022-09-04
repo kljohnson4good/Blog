@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My very first website</title>
+    <title>KJ&#39;s career development blog site</title>
     <link>/</link>
-    <description>Recent content on My very first website</description>
+    <description>Recent content on KJ&#39;s career development blog site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Don&#39;t Wait To Have Your Best Career</title>
+      <link>/2022/09/04/dont-wait-to-have-your-best-career/</link>
+      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/04/dont-wait-to-have-your-best-career/</guid>
+      <description>Are you feeling bored at work, stalled in your career progression, or ready for more than just a paycheck from your job? Or maybe you&amp;rsquo;re just starting your career and wondering if everybody else knows something about being successful that you don&amp;rsquo;t.
+Resignation, burnout and boomerang are all hot topics relating to careers in America recently, but I want to share an overlooked subject that I wish I had given more attention to when I started my career as an engineer over 20 years ago.</description>
+    </item>
+    
+    <item>
+      <title>Tips-n-Tricks</title>
+      <link>/tips-n-tricks/</link>
+      <pubDate>Sat, 03 Sep 2022 16:26:51 -0700</pubDate>
+      
+      <guid>/tips-n-tricks/</guid>
+      <description> Create catchy blog titles by using seopressor.com/blog-title-generator. </description>
+    </item>
+    
     <item>
       <title>About</title>
       <link>/about/</link>
@@ -23,7 +42,7 @@ Logo Home from freepnglogos.com 512x512 Logo from freepnglogos.com Linkedin Logo
       <pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>/2022/09/02/career-development-plan/</guid>
-      <description>Preparing For Your Career Roadtrip&amp;ldquo;If you don&amp;rsquo;t know where you are going, you might wind up someplace else&amp;rdquo; &amp;ndash;Yogi Berra
+      <description>Preparing For Your Career Road Trip&amp;ldquo;If you don&amp;rsquo;t know where you are going, you might wind up someplace else&amp;rdquo; &amp;ndash;Yogi Berra
 This tutorial will provide an introduction and procedural methodology to creating a development plan.
 Why Should You Have A Career Development Plan? What defines a successful career for you?
 Does everybody need a plan in order to be successful? No. There&amp;rsquo;s such a thing as luck too. But I bet most people already have a plan in some variant or another.</description>

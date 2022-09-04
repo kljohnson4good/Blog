@@ -2,9 +2,10 @@
 title: Career Development Plan
 author: Kristi Johnson
 date: '2022-09-02'
+description: "A Career Development Plan Procedure"
 ---
 
-<h1 style="text-align: center;">Preparing For Your Career Roadtrip</h1>
+<h1 style="text-align: center;">Preparing For Your Career Road Trip</h1>
 
 ![image info](./resources/road-15429.png)
 
@@ -31,7 +32,7 @@ There are two major components: The **process** and the **plan** itself.
 ## The Process
 <iframe style="float: right;" src="https://assets.pinterest.com/ext/embed.html?id=558939003724582226" height="336" width="236" frameborder="0" scrolling="no" ></iframe>
 
-The process serves to break down large goals (ex: end of career/retirement or end of life) into smaller, short-term milestones along with actional steps you can take on a daily/weekly/monthly basis.
+The process serves to break down large goals (ex: end of career/retirement or end of life) into smaller, short-term milestones along with actionable steps you can take on a daily/weekly/monthly basis.
 
 I know sometimes taking small steps doesn't feel like big progress, but as somebody else said much better: "*little by little becomes a lot*".
 
@@ -64,9 +65,9 @@ If you're having a difficult time coming up with these, then you're not alone.  
 
 The landscape helps you see which routes will be easier and which will be more difficult to traverse.  The TOP model is popular and can easily be Googled to get more details.  TOP stands for: **Talent**, **Opportunity** and **Passion**.  The concept is that when the 3 intersect, this is where you can have your best career.  
 
-Take a moment to think about your talents (i.e. strenghs) and passions (things you have an affinity to do and would probably even do them for free).  If you're having trouble defining your talents, it may help to get feedback from your manager, mentor, colleagues or friends.  There are also assessments like [StrengthsFinder](https://www.gallup.com/cliftonstrengths/en/254033/strengthsfinder.aspx).
+Take a moment to think about your talents (i.e. strengths) and passions (things you have an affinity to do and would probably even do them for free).  If you're having trouble defining your talents, it may help to get feedback from your manager, mentor, colleagues or friends.  There are also assessments like [StrengthsFinder](https://www.gallup.com/cliftonstrengths/en/254033/strengthsfinder.aspx).
 
-The opportunites available are going to be restricted by the company you work for, your boss and the particular team you're in. Talk to your manager or think about how to **Job Craft** your role in a way that can best overlap with your talents and passions. Align opportunities with business objectives for maximum impact. 
+The opportunities available are going to be restricted by the company you work for, your boss and the particular team you're in. Talk to your manager or think about how to **Job Craft** your role in a way that can best overlap with your talents and passions. Align opportunities with business objectives for maximum impact. 
 
 Don't forget that the landscape is not static!  Adopt a **growth mindset**, to believe that anything is possible.
 
@@ -105,7 +106,7 @@ Your strengths define your starting point.  Locate them on the map, i.e. which g
 
 ### Plan Your Route
 
-Now that you have a destination in mind and know where you're starting from, it's time to plan the route  and waypoints.  Think of the waypoints as micro-goals (or stepping stones) along your way to achieving your goals.  It's best if they are specific, timebound and measureable.  What do you want, by when, as measured by what?  Without those details, it becomes too easy to let yourself off the hook.  For example, of you want to become an an *expert* in python coding, what does it mean to be an expert?  Instead, define expert as for example, passing a particular skills test (like LinkedIn skills tests).
+Now that you have a destination in mind and know where you're starting from, it's time to plan the route  and waypoints.  Think of the waypoints as micro-goals (or stepping stones) along your way to achieving your goals.  It's best if they are specific, time bound and measurable.  What do you want, by when, as measured by what?  Without those details, it becomes too easy to let yourself off the hook.  For example, of you want to become an an *expert* in python coding, what does it mean to be an expert?  Instead, define expert as for example, passing a particular skills test (like LinkedIn skills tests).
 
 <font size=3 color="Gray">
 
@@ -130,7 +131,7 @@ example:
     * **Waypoint 1**:Become an expert at programming in python by the end of the year, as measured by passing the Linked-In skills test
         * **Action 1**: Schedule 2 hours per week on my calendar to find a class and complete all the exercises
     * **Waypoint 2**: Become a confident presenter
-        * **Action 2**: Schedule an hour a week to attend my local Toastermaster's club meeting
+        * **Action 2**: Schedule an hour a week to attend my local Toastmasters club meeting
 
 </font>
 
@@ -163,7 +164,7 @@ This process should be repeated regularly because your personal values and goals
 
 # Closing Thoughts
 
-In order to be truly successful, try not to be guided by somebody else's verson of success.  Find yourself first.
+In order to be truly successful, try not to be guided by somebody elses version of success.  Find yourself first.
 
 1. Know Yourself
 2. Know your map and landscape

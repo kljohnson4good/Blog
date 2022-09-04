@@ -1,6 +1,6 @@
 baseurl: /
 languageCode: en-us
-title: My very first website
+title: KJ's career development blog site
 theme: hugo-lithium
 googleAnalytics: ''
 disqusShortname: ''
@@ -20,6 +20,8 @@ menu:
       url: https://github.com/kljohnson4good/Blog
     - name: Linked-In
       url: https://www.linkedin.com/in/kristi-johnson-b315a9157/
+    - name: Tips-n-Tricks
+      url: /tips-n-tricks/
 params:
   MathJaxCDN: //cdnjs.cloudflare.com/ajax/libs
   MathJaxVersion: 2.7.5
@@ -33,9 +35,9 @@ params:
   highlightjsVersion: 9.12.0
   logo:
     alt: Logo
-    height: 50
+    height: 40
     url: logo-home-png-7411.png
-    width: 50
+    width: 40
 markup:
   defaultMarkdownHandler: goldmark
   goldmark:
