@@ -49,6 +49,64 @@ This tutorial will help you build your own unique **compass**, **landscape** and
 
 <br/>
 
+<!--- TEST ADDING PAGINATE FEATURE --->
+
+<span class="content1">
+Add your first page content here
+</span>
+<span class="content2" style="display:none">
+Add your second page content here
+</span>
+<span class="content3" style="display:none">
+Add your third page content here
+</span>
+<span class="content4" style="display:none">
+Add your final page content here
+</span>
+
+<p><b>Pages: <span style="color: #3d85c6;">
+<a href="#" class="page1">1</a>
+<a href="#" class="page2">2</a>
+<a href="#" class="page3">3</a>
+<a href="#" class="page4">4</a></span></b></p>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script style="text/javascript">
+jQuery(document).ready(function(){
+jQuery('.page1').click(function(){
+jQuery('.content1').show();
+jQuery('.content2').hide();
+jQuery('.content3').hide();
+jQuery('.content4').hide();
+return false;
+});
+jQuery('.page2').click(function(){
+jQuery('.content1').hide();
+jQuery('.content2').show();
+jQuery('.content3').hide();
+jQuery('.content4').hide();
+return false;
+});
+jQuery('.page3').click(function(){
+jQuery('.content1').hide();
+jQuery('.content2').hide();
+jQuery('.content3').show();
+jQuery('.content4').hide();
+return false;
+});
+jQuery('.page4').click(function(){
+jQuery('.content1').hide();
+jQuery('.content2').hide();
+jQuery('.content3').hide();
+jQuery('.content4').show();
+return false;
+});
+});
+</script>
+
+<!--- END PAGINATE FEATURE
+
 ### Build Your Compass: Know Thyself
 "<span style="background-color: DarkSlateGray"><font color="Gold"><em>Knowing yourself is the beginning of all wisdom</em></font></span>" --Aristotle
 
