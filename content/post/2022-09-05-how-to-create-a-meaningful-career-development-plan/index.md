@@ -17,7 +17,7 @@ description: "Procedure to creating a meaningful career development plan"
 "<span style="background-color: DarkSlateGray"><font size="4" color="Gold"><em>If you don't know where you are going, you might wind up someplace else</em></font></span>" --Yogi Berra
 
 
-This post continues from the introduction which can be found here: [Don't Wait to Have Your Best Career](https://kljohnson.netlify.app/2022/09/04/dont-wait-to-have-your-best-career/).  It is tutorial that introduces a procedural methodology to create a career development plan that can help you obtain your version of a successful career or perhaps just understand what others might be doing to forge ahead.
+This post continues from the introduction which can be found here: [Don't Wait to Have Your Best Career](https://kljohnson.netlify.app/2022/09/04/dont-wait-to-have-your-best-career/).  It introduces a procedural methodology to create a career development plan so that you can obtain your version of a successful career.
 
 The journey is comprised of these steps:
 1. <a href="#" class="page2">Build Your Compass: Know Thyself</a>
@@ -29,20 +29,13 @@ The journey is comprised of these steps:
 7. <a href="#" class="page8">Get Moving</a>
 8. <a href="#" class="page9">Reflect. Repeat</a>
 
-I suggest you read through all the steps first, then circle back to spend a bit more time on the exercises provided in each step.
+I suggest you read through all the steps first, then circle back to spend a bit more time on the exercises in each step.
 
-If it is helpful for you, this [Career Development Worksheet.docx](https://github.com/kljohnson4good/Blog/blob/main/Career%20Development%20Worksheet.docx) worksheet can be downloaded from the github site which you can use to jot down your responses as you work through the exercises.  By the end you'll also have something to help hold meaningful conversations with your boss/manager and/or mentor. 
+You can download [Career Development Worksheet.docx](https://github.com/kljohnson4good/Blog/blob/main/Career%20Development%20Worksheet.docx) from the github site to jot down your responses for each exercise.  By the end you'll have a tool for meaningful conversations with your boss/manager and/or mentor. 
 
-# Final Thoughts
+### Attribution:
 
-In order to be truly successful, try not to be guided by somebody elses version of success.  Find yourself first.
-
-1. Know Yourself
-2. Know your map and landscape
-3. Plan and act using your internal compass
-4. Reflect regularly
-5. Let you goals be known. Share with people who can help you get to where you want to go
-6. Commit.  Schedule time and take action
+* Image: <a href="https://www.freepnglogos.com/pics/road">Road from freepnglogos.com</a>
 
 <!--- #################### STEP 1 ########################### --->
 </span>
@@ -55,6 +48,8 @@ In order to be truly successful, try not to be guided by somebody elses version 
  </br>
  "<span style="background-color: DarkSlateGray"><font color="Gold"><em>Knowing yourself is the beginning of all wisdom</em></font></span>" --Aristotle
 </p>
+
+Try not to be guided by somebody elses version of success.  Find yourself first.
 
 ### Values
 
@@ -112,8 +107,6 @@ Knowing landscape helps you see which routes will be easier and which will be mo
   <img src="./resources/TOP.png" alt="drawing" style="width:300px;"/>
 </p>
 
-In this exercise you will use the worksheet to write down your talents (i.e. strengths) and consider your opportunities as they relate to your career.
-
 ### Talent (strengths)
 
 These are skills that you've focused on during school or mastered on the job.  They might be things that come naturally easy to you or things that you've worked on to the point that you are now really good at doing.
@@ -122,11 +115,15 @@ It may sometimes be difficult to notice your own strengths because they come so 
 
 If you're having trouble defining your talents then it may help to get feedback from your manager, mentor, colleagues or friends.  There are also free assessments you can take online [https://www.viacharacter.org/](https://www.viacharacter.org/) (one I took), or more detailed assessments you can pay for like [StrengthsFinder](https://www.gallup.com/cliftonstrengths/en/254033/strengthsfinder.aspx).
 
+**Use the worksheet to write down your talents**.
+
 ### Opportunity
 
 The opportunities available to you are going to be restricted by the industry, company you and particular team you're in. If you haven't done so already, have a discussion with to your manager about what opportunities are available which may align with your talents, passions and goals.  Note further to **align opportunities with business objectives for maximum impact**. The more you understand about the big picture company objectives, the more potential you have to add value.  When you add value, you gain leverage to negotiate for the things you want.
 
 Not all managers are the same when it comes to helping you on your journey.  To help yourself more, you may also want to research how to **Job Craft** your role in a way that helps you get closer to what you're looking for. 
+
+**Use the worksheet to write down the available opportunities** as they relate to your current condition.  For example is there a need that needs to be filled that you can volunteer to help out with.
 
 ### Changing the Landscape
 
@@ -197,6 +194,11 @@ example:
 * **Next Destination**: Promotion within 2 years
 
 </font>
+
+### Commit And Share Your Goals
+
+Writing down your goals can support your commitment to them.  Now let them be known to enable others to help you get what you want.  Your manager, mentors and leaders are all people who are typically in a position to hear about opportunities before you do.  They also have influence over who is assigned to do what tasks, so they are key factors in helping you get to where you want to go. <span style="background-color: Beige"><font size="4" color="Black">When people know what you want and what talent you can offer, you'll be top of mind when opportunities open up</span>.  One piece of advice that sticks with me to today is that people cannot read your mind.  You cannot expect people to know what you want, so be vocal.  Say it, and repeat it, and  make sure you're heard.  <span style="background-color: Beige"><font size="4" color="Black">Communicating openly and transparently will uncover hidden opportunities in the landscape</span>.
+
 </span>
 
 <!--- #################### STEP 5 ########################### --->
@@ -204,9 +206,12 @@ example:
 <span class="content5" style="display:none">
 
 # Step 5: Locate Your Starting Point On The Map
-
-Your strengths define your starting point.  Locate them on the map.  For example which grade level or title are you performing to right now?  
-If you've created or located a well defined map in the previous steps, then you can use it to highlight areas you are doing well and areas you need to improve upon.
+Your strengths define your starting point.  Locate them on the map.
+<p align="center">
+  <img src="./resources/You_are_here.png" alt="drawing" style="width:150px;"/>
+</p>
+For example which grade level or title are you performing to right now?  
+If you've created or located a well defined map in the previous steps, then you can use it to check off areas you are doing well and identify areas you need to improve upon which will help plan your route in the next step.
 
 Always stay aligned with your manager.  I suggest you have a meaningful conversation with your manager to ensure you are on the same page because they will be your gatekeeper to upwards mobility in your company.  Note further that each person is unique.  Even managers in the same organizational hierarchy will have different expectations, and further expectations for a peer of yours working for the same manager may not be transferable to you.
 
@@ -236,7 +241,6 @@ example:
     * **Waypoint 1**:Become an expert at programming in python by the end of the year, as measured by passing the Linked-In skills test
     * **Waypoint 2**: Become a confident presenter as measured by my manager
     </font>
-</font>
 
 </font>
 
@@ -260,6 +264,7 @@ Sometimes by simply following your compass (doing things that bring your fulfill
 <br/>
 Trust in the journey and try not to worry too much about the destination.
 
+
 </span>
 
 <!--- #################### STEP 7 ########################### --->
@@ -269,7 +274,7 @@ Trust in the journey and try not to worry too much about the destination.
 ### Step 7: Get Moving
 <iframe style="float: left; padding-right:10px" src="https://assets.pinterest.com/ext/embed.html?id=611082243180070377" height="258" width="236" frameborder="0" scrolling="no" ></iframe>
 
-Break the waypoints into actionable steps.  Again suppose so you want to be an expert python coder.  How does one achieve that?  Brainstorm a list of options such as taking a class or reading a book.  Prioritize the list then go do some reasearch to define which specific class or book, and schedule some time in whatever calendar runs your life and go do it!
+Break the waypoints into actionable steps.  Again suppose so you want to be an expert python coder.  How does one achieve that?  Brainstorm a list of options such as taking a class or reading a book.  Prioritize the list then go do some research to define which specific class or book, and schedule some time in whatever calendar runs your life and go do it!
 
 **Use the worksheet to identify actions that move you towards the waypoints**
 
@@ -300,15 +305,13 @@ example:
 
 Congratulations!  If you've gotten this far, then you have a good start on planning your career journey.  But it doesn't end here, nor does it stop once you reach a destination.  
 
-Use your goals, talents, passions and opportunities to have meaningful career development conversations with your manager or mentor.  **Be vocal.  It's important that others who are in positions to help you know what you want**.  Say it, then repeat it, make sure you're heard :-) 
-
-Remember that your plan is not a contract.  It's OK if you don't do everything on the list or don't execute them exactly as planned.
+Remember that your plan is not a contract.  It's OK if you don't do everything on the list or don't execute them exactly as planned.  During your reflection time, also record unplanned events or achievements.  These are important waypoints that may help you to see the path and opportunities as it reveals itself.
 
 This process should be repeated regularly because your personal values and goals will change over time, not to mention the landscape and map may as well. 
 
 <font size=3 color="Gray">
 
-example: My personal method leverages new years as an annual checkpoint to write down my bigger aspirations in a binder as well as record unexpected achievements that occurred during the year.  Then my quarterly work related review sessions with my manager serve to remind me to double check the plan against my current situation.
+example: My personal method leverages new years as an annual checkpoint to reflect on my bigger aspirations in a binder as well as record unexpected achievements that occurred during the year.  Then my quarterly work related review sessions with my manager serve to remind me to double check the plan against my current situation.
 
 </font>
 
