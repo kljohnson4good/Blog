@@ -23,8 +23,8 @@ The journey is comprised of these steps:
 1. <a href="#" class="page2">Build Your Compass: Know Thyself</a>
 2. <a href="#" class="page3">Understand The Landscape</a>
 3. <a href="#" class="page4">Map Orientation</a>
-4. <a href="#" class="page5">Choose Your Destination</a>
-5. <a href="#" class="page6">Locate Your Starting Point</a>
+4. <a href="#" class="page5">Locate Your Starting Point</a>
+5. <a href="#" class="page6">Choose Your Destination</a>
 6. <a href="#" class="page7">Plan Your Route</a>
 7. <a href="#" class="page8">Get Moving</a>
 8. <a href="#" class="page9">Reflect. Repeat</a>
@@ -32,10 +32,6 @@ The journey is comprised of these steps:
 I suggest you read through all the steps first, then circle back to spend a bit more time on the exercises in each step.
 
 You can download [Career Development Worksheet.docx](https://github.com/kljohnson4good/Blog/blob/main/Career%20Development%20Worksheet.docx) from the github site to jot down your responses for each exercise.  By the end you'll have a tool for meaningful conversations with your boss/manager and/or mentor. 
-
-### Attribution:
-
-* Image: <a href="https://www.freepnglogos.com/pics/road">Road from freepnglogos.com</a>
 
 **<a href="#" class="page2">Click Here Get Started!</a>**
 
@@ -63,7 +59,7 @@ Your journey should be guided by your values. Otherwise too many years later you
 
 Use the worksheet and brainstorm these things:
 1. What experiences fulfill you and bring you joy and happiness?  
-2. Who your role models and why?  What is it about them that you admire and seek to amplify in yourself?
+2. Who are your role models and why?  What is it about them that you admire and seek to amplify in yourself?
 3. Dig deeper into the WHY behind your current goals.  For example if you want to be rich, what is it about being rich that you really want?  Is it freedom, admiration, power, etc?
 
 What values are behind the theme of your responses?  You may want to stop here and research more about values or even take an assessment to help you understand yourself and what motivates you.  If you already have a good handle on who you are, then go on to the next step.
@@ -86,14 +82,10 @@ Finding a career that can tap into your passion will boost your career because y
 
 **Use the worksheet to identify your top 3-5 passions**.
 
-Passions are things you like doing, have an affinity to do and would probably even do them for free.  It's helpful to think about where you spend the bulk of your time or thoughts when they are NOT chores (things you don't simply feel obligated to do) or physical restoration (i.e. sleep).  For me, passions are the things I stay up to midnight for despite being sleepy.  I wake up thinking about them night, and can't wait to get out of the bed in the morning to do.  <span style="background-color: Beige"><font size="4" color="Black">Passion projects create energy in my life</span>.  
+Passions are things you like doing, have an affinity to do and would probably even do them for free.  It's helpful to think about where you spend the bulk of your time or thoughts when they are NOT chores (things you don't simply feel obligated to do) or physical restoration (i.e. sleep).  For me, passions are the things I stay up to midnight for despite being sleepy.  I wake up thinking about them at night, and can't wait to get out of bed in the morning to do them.  <span style="background-color: Beige"><font size="4" color="Black">Passion projects create energy</span> in my life.  
 
 * List experiences you've had which gave you energy or made you feel excited
 * What do you do for fun in your "me time"?
-
-### Attribution:
-
-* Photo by Hassan OUAJBIR: https://www.pexels.com/photo/woman-sitting-while-showing-heart-sign-hands-1535288/
 
 <a href="#" class="page3">Go To The Next Step</a>
 
@@ -108,7 +100,7 @@ Passions are things you like doing, have an affinity to do and would probably ev
   <img src="./resources/pexels-matheus-bertelli-11749418.jpg" alt="drawing" style="width:500px;"/>
 </p>
 
-Knowing landscape helps you see which routes will be easier and which will be more difficult (or impossible) to traverse.  The TOP model is popular and can easily be Googled to get more details.  TOP stands for: **Talent**, **Opportunity** and **Passion**.  The concept is that when the 3 intersect, this is where you can have your best career.  
+Knowing the landscape helps you see which routes will be easier and which will be more difficult (or impossible) to traverse.  The TOP model is popular and can easily be Googled to get more details.  TOP stands for: **Talent**, **Opportunity** and **Passion**.  The concept is that when the 3 intersect, this is where you can have your best career.  
 
 <p align="center" >
   <img src="./resources/TOP.png" alt="drawing" style="width:300px;"/>
@@ -116,31 +108,27 @@ Knowing landscape helps you see which routes will be easier and which will be mo
 
 ### Talent (strengths)
 
-These are skills that you've focused on during school or mastered on the job.  They might be things that come naturally easy to you or things that you've worked on to the point that you are now really good at doing.
+These are skills that you've focused on during school or mastered on the job.  They might be things that come easy to you or things that you've worked on to the point that you are now really good at doing.
 
 It may sometimes be difficult to notice your own strengths because they come so naturally to you and feel easy.  If you find yourself wondering why nobody else can do what you do because it's so intuitive or easy, then take special note because these are **your superpowers**.
 
-If you're having trouble defining your talents then it may help to get feedback from your manager, mentor, colleagues or friends.  There are also free assessments you can take online [https://www.viacharacter.org/](https://www.viacharacter.org/) (one I took), or more detailed assessments you can pay for like [StrengthsFinder](https://www.gallup.com/cliftonstrengths/en/254033/strengthsfinder.aspx).
+If you're having trouble defining your talents then it may help to get feedback from your manager, mentor, colleagues or friends.  There are also free assessments you can take online such as [https://www.viacharacter.org/](https://www.viacharacter.org/) (I took this one), or more detailed assessments you can pay for like [StrengthsFinder](https://www.gallup.com/cliftonstrengths/en/254033/strengthsfinder.aspx).
 
 **Use the worksheet to write down your talents**.
 
 ### Opportunity
 
-The opportunities available to you are going to be restricted by the industry, company you and particular team you're in. If you haven't done so already, have a discussion with to your manager about what opportunities are available which may align with your talents, passions and goals.  Note further to **align opportunities with business objectives for maximum impact**. The more you understand about the big picture company objectives, the more potential you have to add value.  When you add value, you gain leverage to negotiate for the things you want.
+The opportunities available to you are going to be restricted by the industry, company you work for and which particular team you're in. If you haven't done so already, have a discussion with your manager about what opportunities are available which may align with your talents, passions and goals.  Note further to **align opportunities with business objectives for maximum impact**. The more you understand about the company's big picture objectives, the more potential you have to add value.  When you add value, you gain leverage to negotiate for the things you want.
 
 Not all managers are the same when it comes to helping you on your journey.  To help yourself more, you may also want to research how to **Job Craft** your role in a way that helps you get closer to what you're looking for. 
 
-**Use the worksheet to write down the available opportunities** as they relate to your current condition.  For example is there a need that needs to be filled that you can volunteer to help out with.
+**Use the worksheet to write down the available opportunities** as they relate to your current condition.  For example is there a need that you can volunteer to drive or help out with?
 
 ### Changing the Landscape
 
 The landscape is not static!  Adopt a **growth mindset**, to believe that anything is possible.  Values and passions are probably going to be immutable properties but you have control over your talent and can influence the opportunities.
 
 For example if you complete your TOP model Venn diagram and realize that the intersection doesn't align with your income needs, then you may need to change your skillset by working on mastering a particular skill or acquiring a certificate.  Likewise if your opportunities don't align then you may need to look into changing your role, company or industry.
-
-### Attribution
-
-* Photo by Matheus Bertelli: https://www.pexels.com/photo/off-road-car-driving-in-difficult-terrain-11749418/
 
 <a href="#" class="page4">Go To The Next Step</a>
 
@@ -155,21 +143,42 @@ The map is defined by your company and your boss. They will define the paths and
 <p align="center" style="float: right; padding-right:10px">
   <img src="./resources/NicePng_up-png_2465129.png" alt="drawing" style="width:150px;"/>
 </p>
- For example a company may have grade levels (ex: Engineer grade level I, II, III) or may simply use titles like "junior", "senior", "lead", "fellow", etc.  Each typically come with financial and/or prestige related incentives and will likely be how you end up defining progress or setting short-term goals.  
+ For example a company may have grade levels (ex: Engineer grade level I, II, III) or may use titles like "junior", "senior", "lead", "fellow", etc.  Each typically come with financial and/or prestige related incentives and will likely be how you end up defining progress or setting short-term goals.  
 
-Some companies like mine have a pretty well defined map, but others don't.  If your company or team has not created this for you, then you may have to do a little extra work to create one for yourself.  Having something well defined will help keep mutual expectations between you and your manager and help to hold your superiors accountable when it comes time for those promotion discussions.  Maps aren't guarantees or checkboxes to promotions but they will help you collect the evidence necessary to expedite it.
+Some companies like the one I work for have a pretty well defined map, but others don't.  If your company or team has not created this for you, then you may have to do a little extra work to create one for yourself.  Having something well defined will help keep mutual expectations between you and your manager and help to hold your superiors accountable when it comes time for those promotion discussions.  Maps aren't guarantees or checkboxes to promotions but they will help you collect the evidence necessary to expedite it.
 
-If you have not done so yet, have a discussion with your manager, mentor and/or colleagues to make sure you understand what the map is, and which way is up, down or sideways.  You should also seek to understand what it *actually* takes to move around on the map as well.
+If you have not done so yet, have a discussion with your manager, mentor and/or colleagues to make sure you understand what the map is, and which way is up, down or sideways.  You should also seek to understand what it *actually* takes to move around on the map.
 
 **<a href="#" class="page5">Go To The Next Step</a>**
 
 </span>
 
+
 <!--- #################### STEP 4 ########################### --->
-</span>
 <span class="content4" style="display:none">
 
-# Step 4: Choose Your Destination
+# Step 4: Locate Your Starting Point On The Map
+
+Use the map to identify where you strengths put you right now.
+
+<p align="center">
+  <img src="./resources/You_are_here.png" alt="drawing" style="width:150px;"/>
+</p>
+You need to answer for yourself which grade level or title you are performing to and where you are on the spectrum.  For example, you may be a "level II engineer", but are you performing below, under, or just in the middle of your boss's expectations?  Which expectations specifically are you exceeding, meeting or need to work on?  These could be technical skills like programming, soft skills like presenting, or behavioral attributes like showing up on time.
+
+If you've created or located a well defined map in the previous steps, then you can use it to check off areas you are doing well and identify areas you need to improve upon which will help plan your route in the next step.
+
+Always stay aligned with your manager.  I suggest you have a meaningful conversation with your manager to ensure you are on the same page because they will be your gatekeeper to upwards mobility in your company.  Note further that each person is unique.  Managers in the same organizational hierarchy could have different expectations, and even expectations you heard about from a peer working for your same manager may not be transferable to you.   
+
+<a href="#" class="page6">Go To The Next Step</a>
+
+</span>
+
+<!--- #################### STEP 5 ########################### --->
+</span>
+<span class="content5" style="display:none">
+
+# Step 5: Choose Your Destination
 
 It's *Choose You're Own Adventure* time.  How far you want to go?
 
@@ -184,7 +193,7 @@ It's *Choose You're Own Adventure* time.  How far you want to go?
 
 **Use the worksheet to write down lifelong goals**.  These long-term goals may be a goal 10+ years down the line, when you retire, or even what you want to achieve before you die, or how you want to be remembered when you die.  
 
-Be inspirational.  The goal might feel impossible right now but this plan is being written to take those steps.  Try not to worry about whether you achieve it or not either.  A moonshot could be made by aiming for the stars, and that's still pretty remarkable.
+Be inspirational.  The goal might feel impossible right now but this plan is being written to take those steps.  Try not to worry about whether you or not you will achieve it right now.  A moonshot could be made by aiming for the stars, and that's still pretty remarkable.
 
 "<span style="background-color: DarkSlateGray;"><font color="Gold"><em>If you aim higher than you expect, you could reach higher than you dreamed</em></font></span>" --Richard Branson
 
@@ -193,9 +202,11 @@ Be inspirational.  The goal might feel impossible right now but this plan is bei
 
 ### Short-Term Goals
 
-**Use the worksheet to write down short term goals**.
+Define career goals which will be limited by your current map and landscape.  For example, your map may indicate that There are 5 levels for your role.  Your career goal may be to reach level 4 for reasons that align with your values.
 
-Break the larger goals into smaller goals until you identify something that is achievable in the next 1-4 years.  These goals will be limited by your landscape and map given your current situation.
+Next use your map to derive your next destination between your starting point and your career goal.  For example, if you're currently at level 2 and want to be level 4, then your next destination is level 3.
+
+**Use the worksheet to write down your next destination** which should be something achievable in the next 1-4 years.  
 
 <font size=3 color="Gray">
 
@@ -211,24 +222,7 @@ example:
 
 Writing down your goals can support your commitment to them.  Now let them be known to enable others to help you get what you want.  Your manager, mentors and leaders are all people who are typically in a position to hear about opportunities before you do.  They also have influence over who is assigned to do what tasks, so they are key factors in helping you get to where you want to go. <span style="background-color: Beige"><font size="4" color="Black">When people know what you want and what talent you can offer, you'll be top of mind when opportunities open up</span>.  One piece of advice that sticks with me to today is that people cannot read your mind.  You cannot expect people to know what you want, so be vocal.  Say it, and repeat it, and  make sure you're heard.  <span style="background-color: Beige"><font size="4" color="Black">Communicating openly and transparently will uncover hidden opportunities in the landscape</span>.
 
-**<a href="#" class="page6">Go To The Next Step</a>**
-
-</span>
-
-<!--- #################### STEP 5 ########################### --->
-<span class="content5" style="display:none">
-
-# Step 5: Locate Your Starting Point On The Map
-Your strengths define your starting point.  Locate them on the map.
-<p align="center">
-  <img src="./resources/You_are_here.png" alt="drawing" style="width:150px;"/>
-</p>
-For example which grade level or title are you performing to right now?  
-If you've created or located a well defined map in the previous steps, then you can use it to check off areas you are doing well and identify areas you need to improve upon which will help plan your route in the next step.
-
-Always stay aligned with your manager.  I suggest you have a meaningful conversation with your manager to ensure you are on the same page because they will be your gatekeeper to upwards mobility in your company.  Note further that each person is unique.  Even managers in the same organizational hierarchy will have different expectations, and further expectations for a peer of yours working for the same manager may not be transferable to you.
-
-<a href="#" class="page7">Go To The Next Step</a>
+**<a href="#" class="page7">Go To The Next Step</a>**
 
 </span>
 
@@ -241,7 +235,7 @@ Always stay aligned with your manager.  I suggest you have a meaningful conversa
   <img src="./resources/pexels-cottonbro-9292813.jpg" alt="drawing" style="width:300px;"/>
 </p>
 
-Now that you have a destination in mind and know where you're starting from, it's time to plan the route  and waypoints.  Think of the waypoints as micro-goals (or stepping stones) along your way to achieving your goals.  It's best if they are specific, time bound and measurable.  What do you want, by when, as measured by what?  Without those details, it becomes too easy to let yourself off the hook.  For example, of you want to become an an *expert* in python coding, what does it mean to be an expert?  Instead, define expert as for example, passing a particular skills test (like LinkedIn skills tests).
+Now that you know your starting point and next destination, it's time to plan the route  and waypoints.  Think of the waypoints as micro-goals (or stepping stones) along your way to achieving your goals.  It's best if they are specific, time bound and measurable.  What do you want, by when, as measured by what?  Without those details, it becomes too easy to let yourself off the hook.  For example, if you want to move from level 2 to level 3 software engineer, a waypoint might be to become an "expert" in python coding.  This too needs to be specifically defined so that you know what exactly you need to do.  Ask yourself what the qualifications of an "expert" are.  For example, maybe you need to pass an associated certification test.
 
 **Use the worksheet to plan waypoints between your location and next destination**.
 
@@ -328,6 +322,14 @@ This process should be repeated regularly because your personal values and goals
 example: My personal method leverages new years as an annual checkpoint to reflect on my bigger aspirations in a binder as well as record unexpected achievements that occurred during the year.  Then my quarterly work related review sessions with my manager serve to remind me to double check the plan against my current situation.
 </font>
 
+### Credits:
+
+Image Attribution:
+
+* <a href="https://www.freepnglogos.com/pics/road">Road from freepnglogos.com</a>
+* Photo by Hassan OUAJBIR: https://www.pexels.com/photo/woman-sitting-while-showing-heart-sign-hands-1535288/
+* Photo by Matheus Bertelli: https://www.pexels.com/photo/off-road-car-driving-in-difficult-terrain-11749418/
+
 </span>
 
 <!--- #################### end of content ########################### 
@@ -338,8 +340,8 @@ example: My personal method leverages new years as an annual checkpoint to refle
 1. <a href="#" class="page2">Build Your Compass</a>
 2. <a href="#" class="page3">Understand The Landscape</a>
 3. <a href="#" class="page4">Map Orientation</a>
-4. <a href="#" class="page5">Choose Your Destination</a>
-5. <a href="#" class="page6">Locate Your Starting Point</a>
+4. <a href="#" class="page5">Locate Your Starting Point</a>
+5. <a href="#" class="page6">Choose Your Destination</a>
 6. <a href="#" class="page7">Plan Your Route</a>
 7. <a href="#" class="page8">Get Moving</a>
 7. <a href="#" class="page9">Reflect</a>
