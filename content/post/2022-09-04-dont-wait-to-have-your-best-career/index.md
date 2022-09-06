@@ -42,4 +42,4 @@ Are plans bulletproof?  No.  But they'll help keep you progressing on a path tha
 
 "<span style="background-color: DarkSlateGray"><font color="Gold"><em>Luck is when preparation meets opportunity</em></font></span>" --Seneca
 
-Continue reading here: [Career Development Plan](https://kljohnson.netlify.app/2022/09/02/career-development-plan/)
+Continue reading here: [How To Create A Meaningful Career Development Plan](https://kljohnson.netlify.app/2022/09/05/how-to-create-a-meaningful-career-development-plan/)
