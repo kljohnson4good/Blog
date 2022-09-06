@@ -37,8 +37,12 @@ You can download [Career Development Worksheet.docx](https://github.com/kljohnso
 
 * Image: <a href="https://www.freepnglogos.com/pics/road">Road from freepnglogos.com</a>
 
-<!--- #################### STEP 1 ########################### --->
+**<a href="#" class="page2">Click Here Get Started!</a>**
+
 </span>
+
+<!--- #################### STEP 1 ########################### --->
+
 <span class="content1" style="display:none">
 
 # Step 1: Build Your Compass (Know Thyself)
@@ -91,8 +95,11 @@ Passions are things you like doing, have an affinity to do and would probably ev
 
 * Photo by Hassan OUAJBIR: https://www.pexels.com/photo/woman-sitting-while-showing-heart-sign-hands-1535288/
 
-<!--- #################### STEP 2 ########################### --->
+<a href="#" class="page3">Go To The Next Step</a>
+
 </span>
+
+<!--- #################### STEP 2 ########################### --->
 <span class="content2" style="display:none">
 
 # Step 2: Understand The Landscape
@@ -135,8 +142,11 @@ For example if you complete your TOP model Venn diagram and realize that the int
 
 * Photo by Matheus Bertelli: https://www.pexels.com/photo/off-road-car-driving-in-difficult-terrain-11749418/
 
-<!--- #################### STEP 3 ########################### --->
+<a href="#" class="page4">Go To The Next Step</a>
+
 </span>
+
+<!--- #################### STEP 3 ########################### --->
 <span class="content3" style="display:none">
 
 # Step 3: Map Orientation
@@ -150,6 +160,8 @@ The map is defined by your company and your boss. They will define the paths and
 Some companies like mine have a pretty well defined map, but others don't.  If your company or team has not created this for you, then you may have to do a little extra work to create one for yourself.  Having something well defined will help keep mutual expectations between you and your manager and help to hold your superiors accountable when it comes time for those promotion discussions.  Maps aren't guarantees or checkboxes to promotions but they will help you collect the evidence necessary to expedite it.
 
 If you have not done so yet, have a discussion with your manager, mentor and/or colleagues to make sure you understand what the map is, and which way is up, down or sideways.  You should also seek to understand what it *actually* takes to move around on the map as well.
+
+**<a href="#" class="page5">Go To The Next Step</a>**
 
 </span>
 
@@ -199,10 +211,11 @@ example:
 
 Writing down your goals can support your commitment to them.  Now let them be known to enable others to help you get what you want.  Your manager, mentors and leaders are all people who are typically in a position to hear about opportunities before you do.  They also have influence over who is assigned to do what tasks, so they are key factors in helping you get to where you want to go. <span style="background-color: Beige"><font size="4" color="Black">When people know what you want and what talent you can offer, you'll be top of mind when opportunities open up</span>.  One piece of advice that sticks with me to today is that people cannot read your mind.  You cannot expect people to know what you want, so be vocal.  Say it, and repeat it, and  make sure you're heard.  <span style="background-color: Beige"><font size="4" color="Black">Communicating openly and transparently will uncover hidden opportunities in the landscape</span>.
 
+**<a href="#" class="page6">Go To The Next Step</a>**
+
 </span>
 
 <!--- #################### STEP 5 ########################### --->
-</span>
 <span class="content5" style="display:none">
 
 # Step 5: Locate Your Starting Point On The Map
@@ -215,11 +228,11 @@ If you've created or located a well defined map in the previous steps, then you 
 
 Always stay aligned with your manager.  I suggest you have a meaningful conversation with your manager to ensure you are on the same page because they will be your gatekeeper to upwards mobility in your company.  Note further that each person is unique.  Even managers in the same organizational hierarchy will have different expectations, and further expectations for a peer of yours working for the same manager may not be transferable to you.
 
-</font>
+<a href="#" class="page7">Go To The Next Step</a>
+
 </span>
 
 <!--- #################### STEP 6 ########################### --->
-</span>
 <span class="content6" style="display:none">
 
 ### Step 6: Plan Your Route
@@ -264,7 +277,7 @@ Sometimes by simply following your compass (doing things that bring your fulfill
 <br/>
 Trust in the journey and try not to worry too much about the destination.
 
-
+<a href="#" class="page8">Go To The Next Step</a>
 </span>
 
 <!--- #################### STEP 7 ########################### --->
@@ -295,10 +308,11 @@ example:
 
 </font>
 
-</font>
-</span>
+**<a href="#" class="page9">Go To The Next Step</a>**
 
 </span>
+
+<!--- #################### STEP 8 ########################### --->
 <span class="content8" style="display:none">
 
 # Reflect.  Repeat.
@@ -312,22 +326,12 @@ This process should be repeated regularly because your personal values and goals
 <font size=3 color="Gray">
 
 example: My personal method leverages new years as an annual checkpoint to reflect on my bigger aspirations in a binder as well as record unexpected achievements that occurred during the year.  Then my quarterly work related review sessions with my manager serve to remind me to double check the plan against my current situation.
-
 </font>
 
 </span>
 
 <!--- #################### end of content ########################### 
-<p><b>Steps: <span style="color: #3d85c6;">
-<a href="#" class="page1">Intro</a>
-<a href="#" class="page2">1</a>
-<a href="#" class="page3">2</a>
-<a href="#" class="page4">3</a>
-<a href="#" class="page5">4</a>
-<a href="#" class="page6">5</a>
-<a href="#" class="page7">6</a>
-<a href="#" class="page8">7</a>
-</span></b></p>--->
+--->
 
 <p><b>Navigation: <span style="color: #3d85c6;">
 <a href="#" class="page1">Intro</a>
@@ -340,6 +344,8 @@ example: My personal method leverages new years as an annual checkpoint to refle
 7. <a href="#" class="page8">Get Moving</a>
 7. <a href="#" class="page9">Reflect</a>
 </b></p>
+
+<!--- below code will show/hide sections based on which is selected --->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
@@ -355,6 +361,7 @@ jQuery('.content5').hide();
 jQuery('.content6').hide();
 jQuery('.content7').hide();
 jQuery('.content8').hide();
+jQuery('.window').scrollTo(0,0);
 return false;
 });
 jQuery('.page2').click(function(){
@@ -367,6 +374,7 @@ jQuery('.content5').hide();
 jQuery('.content6').hide();
 jQuery('.content7').hide();
 jQuery('.content8').hide();
+jQuery('.window').scrollTo(0,0);
 return false;
 });
 jQuery('.page3').click(function(){
@@ -379,6 +387,7 @@ jQuery('.content5').hide();
 jQuery('.content6').hide();
 jQuery('.content7').hide();
 jQuery('.content8').hide();
+jQuery('.window').scrollTo(0,0);
 return false;
 });
 jQuery('.page4').click(function(){
@@ -391,6 +400,7 @@ jQuery('.content5').hide();
 jQuery('.content6').hide();
 jQuery('.content7').hide();
 jQuery('.content8').hide();
+jQuery('.window').scrollTo(0,0);
 return false;
 });
 jQuery('.page5').click(function(){
@@ -403,6 +413,7 @@ jQuery('.content5').hide();
 jQuery('.content6').hide();
 jQuery('.content7').hide();
 jQuery('.content8').hide();
+jQuery('.window').scrollTo(0,0);
 return false;
 });
 jQuery('.page6').click(function(){
@@ -415,6 +426,7 @@ jQuery('.content5').show();
 jQuery('.content6').hide();
 jQuery('.content7').hide();
 jQuery('.content8').hide();
+jQuery('.window').scrollTo(0,0);
 return false;
 });
 jQuery('.page7').click(function(){
@@ -427,6 +439,7 @@ jQuery('.content5').hide();
 jQuery('.content6').show();
 jQuery('.content7').hide();
 jQuery('.content8').hide();
+jQuery('.window').scrollTo(0,0);
 return false;
 });
 jQuery('.page8').click(function(){
@@ -439,6 +452,7 @@ jQuery('.content5').hide();
 jQuery('.content6').hide();
 jQuery('.content7').show();
 jQuery('.content8').hide();
+jQuery('.window').scrollTo(0,0);
 return false;
 });
 jQuery('.page9').click(function(){
@@ -451,6 +465,7 @@ jQuery('.content5').hide();
 jQuery('.content6').hide();
 jQuery('.content7').hide();
 jQuery('.content8').show();
+jQuery('.window').scrollTo(0,0);
 return false;
 });
 });

@@ -22,6 +22,11 @@
 
 
 
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
 <link rel="stylesheet" href="/css/fonts.css" media="all">
 <link rel="stylesheet" href="/css/main.css" media="all">
 
@@ -71,10 +76,19 @@
 <p>Create catchy blog titles by using <a href="https://seopressor.com/blog-title-generator">seopressor.com/blog-title-generator</a>.  Although you may not use the titles, they may help you focus on a central theme for a post which may be appealing for a wider audience.</p>
 </li>
 <li>
-<p>A simple code template to split a longer blog into multiple pages was obatined from <a href="https://blogtimenow.com/blogging/splitting-long-blog-post-blogger/">this blogtimenow.com post</a></p>
+<p>A simple code template to split a longer blog into multiple pages was obatined from <a href="https://blogtimenow.com/blogging/splitting-long-blog-post-blogger/">this blogtimenow.com post</a>.  I then added &lsquo;scrollTo&rsquo; to each navigation so that the window appears at the top of the context instead of at the bottom. Example:</p>
 </li>
 </ul>
-
+<pre tabindex="0"><code>&lt;script style=&#34;text/javascript&#34;&gt;
+jQuery(document).ready(function(){
+jQuery(&#39;.page1&#39;).click(function(){
+jQuery(&#39;.content_intro&#39;).show();
+jQuery(&#39;.content1&#39;).hide();
+...
+jQuery(&#39;.window&#39;).scrollTo(0,0);
+return false;
+});
+</code></pre>
     </div>
   </article>
 
@@ -96,6 +110,18 @@
 
     </div>
     
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
 
     
 
