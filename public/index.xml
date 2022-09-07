@@ -6,7 +6,17 @@
     <description>Recent content on KJ&#39;s career development blog site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>R Shiny App Correlation Coefficient</title>
+      <link>/2022/09/06/r-shiny-app-correlation-coefficient/</link>
+      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/06/r-shiny-app-correlation-coefficient/</guid>
+      <description>BackgroundThis post was created from a 2021 Pennsylvania State University (PSU) Stat 485 class project as a way for students to learn R and associated RStudio IDE. I’ve copied the code as I created it during the class and re-hosted the app in a new location given that I am no longer a student.
+This tutorial will review the source code which generates the Shiny App as demonstrated below.</description>
+    </item>
+    
     <item>
       <title>How To Create A Meaningful Career Development Plan</title>
       <link>/2022/09/05/how-to-create-a-meaningful-career-development-plan/</link>

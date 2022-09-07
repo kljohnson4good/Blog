@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ShinyApp on KJ&#39;s career development blog site</title>
+    <link>/categories/shinyapp/</link>
+    <description>Recent content in ShinyApp on KJ&#39;s career development blog site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/shinyapp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>R Shiny App Correlation Coefficient</title>
+      <link>/2022/09/06/r-shiny-app-correlation-coefficient/</link>
+      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/06/r-shiny-app-correlation-coefficient/</guid>
+      <description>BackgroundThis post was created from a 2021 Pennsylvania State University (PSU) Stat 485 class project as a way for students to learn R and associated RStudio IDE. I’ve copied the code as I created it during the class and re-hosted the app in a new location given that I am no longer a student.
+This tutorial will review the source code which generates the Shiny App as demonstrated below.</description>
+    </item>
+    
+  </channel>
+</rss>

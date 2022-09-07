@@ -1,0 +1,172 @@
+---
+title: R Shiny App Correlation Coefficient
+author: Kristi Johnson
+date: '2022-09-06'
+slug: r-shiny-app-correlation-coefficient
+categories:
+  - ShinyApp
+  - R
+tags:
+  - R
+description: R ShinyApp GUI to sort correlation coefficient of parameters used during exploratory data analysis process
+runtime: shiny
+output: html_document
+---
+
+
+
+<div id="section-background" class="section level1">
+<h1>Background</h1>
+<p>This post was created from a 2021 Pennsylvania State University (PSU) Stat 485 class project as a way for students to learn R and associated RStudio IDE. I’ve copied the code as I created it during the class and re-hosted the app in a new location given that I am no longer a student.</p>
+<p>This tutorial will review the source code which generates the Shiny App as demonstrated below. This simply app provides a user interface for the user to provide a .csv dataset and the output will sort the R-squared correlation coefficient values so that the user can focus attention on the highly correlating values as a means for dimension reduction of “wide” datasets.</p>
+<p><strong>WARNING: the app may not work if it has hit the monthly usage limit. Try again later if that is the case.</strong></p>
+<iframe height="800" width="100%" frameborder="no" src="https://kljohnson.shinyapps.io/stat485_project-shiny/">
+</iframe>
+<p>hosted at <a href="https://shinyapps.io" class="uri">https://shinyapps.io</a></p>
+</div>
+<div id="section-introduction" class="section level1">
+<h1>Introduction</h1>
+<p>I had worked on a project at work using JMP, and I wanted to attempt a similar analysis with R and produce a simple output in an interactive Shiny web page. The objective of the analysis is to assist a user to find the most highly correlated parameters in a “wide” dataset, so that the analyst can have data-driven discussion with domain experts about the findings; for example identify potential measurement issues or confirm expected results.</p>
+<p>The particular dataset I was working on had over 200 numerical variables per observation, thus a visualization of a correlation matrix for all possible pairs is impractical for identifying the most significant pairs. Therefore I wanted to develop a tool for which the user could specify a cutoff limit for R-squared and only list the most highly correlated pairs in order of significance. Note that I chose to use R-squared instead of the correlation coefficient because I was looking for significance in correlation, whether or not it was positive or negative.</p>
+<p>Furthermore, since a value like R-squared is of limited value to most domain experts (as most are not well versed in statistical concepts), I also wanted the capability for the analyst to produce an xy plot so that the visualization could demonstrate the finding and assist with the conversation, as well as spot-check that the statistical metric indeed makes sense given the data.
+With this approach the outputs are limited to only the significance of interest, as opposed to showing all possible values which may not be interesting and only wastes time and resources to filter out manually.</p>
+<div id="section-data-source" class="section level3">
+<h3>Data Source</h3>
+<p>I decided to allow multiple data sources for demonstration purposes. The user can select from the built-in “mtcars” dataset, or upload a .csv file of their choosing (in this case I’ve also provided an obfuscated dataset from my work project so that I could compare to my JMP results).</p>
+</div>
+<div id="section-source-code-and-user-guide" class="section level3">
+<h3>Source Code and User Guide</h3>
+<p>This project was easily started within RStudio by creating a new “Shiny Web App”. I chose to use 2 source code files: ui.R and server.R. ui.R provides the user interface code, and sets up the “layout” of the graphical objects that the user will interact with. The ui code below configures 6 Shiny objects:</p>
+<figure>
+<p align="center">
+<img src="resources/fig1.png" alt="drawing" width="700"/>
+<figcaption align="center">
+Fig.1 - ui.R source code
+</figcaption>
+</p>
+</figure>
+<ol style="list-style-type: decimal">
+<li>A row with 3 columns
+<ol style="list-style-type: decimal">
+<li>user selects their dataset (built-in mtcars or user-defined .csv to upload) with “DataSrc”</li>
+<li>numerical input box for the user to specify the desired R-squared lower limit (“Rsq”)</li>
+<li>“action” button. Once clicked, the analysis will filter based on the user’s input</li>
+</ol></li>
+<li>A hidden row which is only required if user selects to upload a.csv file.
+<ol style="list-style-type: lower-alpha">
+<li>If user continues with mtcars dataset then this row will remain hidden.<br />
+</li>
+<li>Otherwise “csvPath” is used to select the file and “fileSel” is the button to process it</li>
+</ol></li>
+<li>“plot” is the area on which the distribution of R-squared values for the entire dataset will be displayed. This is useful for the user to assist in selecting the desired cutoff value.</li>
+<li>“txtout” is the html output for a text heading which reflects the user input</li>
+<li>“table” is where the table of pairs along with correlation coefficient, calculated R-squared, and an interactive button which allows the user to generate the xy plot with a regression fit.</li>
+<li>“matrix” where the xyplot will be displayed when the user clicks the button for a given row in the output table</li>
+</ol>
+</div>
+<div id="section-running-the-app" class="section level3">
+<h3>Running the App</h3>
+<p><strong>Option A)</strong> During development, run the application locally from within RStudio using “Run App”. Select “Run External” to view in a web browser which will render the output correctly (I found some features did not work within R window but worked when viewed with Chrome).</p>
+<figure>
+<p align="center">
+<img src="resources/fig2.png" alt="drawing" width="300"/>
+<figcaption align="center">
+Fig.2 - Running the app within RStudio
+</figcaption>
+</p>
+</figure>
+<p><strong>Option B)</strong> Use the provided web service so to avoid having to download and install any R packages (refer to Deployment).</p>
+</div>
+<div id="section-responding-to-user-input" class="section level3">
+<h3>Responding to User Input</h3>
+<p>The R-code uses “reactive logic” as explained in the diagram below to handle actions upon a user clicking a button or changing an input. (Full code is in the appendix).</p>
+<figure>
+<p align="center">
+<img src="resources/fig3.png" alt="drawing" width="800"/>
+<figcaption align="center">
+Fig.3 - server.R reactive logic for user selection of the data source
+</figcaption>
+</p>
+</figure>
+</div>
+<div id="section-selecting-data" class="section level3">
+<h3>Selecting Data</h3>
+<p>The user can choose to run the demo with the built-in dataset of “mtcars”, or can choose to upload their own .csv file (<font color="red">WARNING: User must select a valid file or app may crash</font>)
+Upon selecting the dataset, the R-code will perform data cleansing like removing NA and variables with only a single value, which was necessary for my custom file.</p>
+<p align="center">
+<img src="resources/fig4-5.PNG" alt="drawing" width="900"/>
+</p>
+</div>
+<div id="section-perform-analysis" class="section level3">
+<h3>Perform Analysis</h3>
+<p>When the user presses this button 2 reactive events are programmed:</p>
+<ol style="list-style-type: decimal">
+<li>A title below the histogram is updated to reflect the user-defined R-squared minimum cutoff value</li>
+<li>The table is populated with pairs of variables that are greater than or equal to the R-squared input value provided by the user. For my custom dataset, there were 1128 possible pairs with a large bucket of correlated variables, so I chose a larger filter value of 1.0, and resulted in 54 remaining pairs!</li>
+</ol>
+<figure>
+<p align="center">
+<img src="resources/fig6.png" alt="drawing" width="800"/>
+<figcaption align="center">
+Fig.6 - reactive source code for the “action” button
+</figcaption>
+</p>
+</figure>
+<p>The R-code initially populates the table with Rsq ordered in descending order, but the user can re-order by any column by clicking the corresponding “up” or “down” arrow to the right of the column name. The built-in Shiny table also limits the output to a maximum of 10 entries, which the user can navigate with the controls below the table, or change the max with the drop-down box control above the table.</p>
+<p>The user will see only the histogram plot of all R-squared values, and the rest of the output awaits the user to update the R-squared limit and click the “Perform Analysis” button.</p>
+<figure>
+<p align="center">
+<img src="resources/fig7.png" alt="drawing" width="800"/>
+<figcaption align="center">
+Fig.7 - UI Performing the Analysis
+</figcaption>
+</p>
+</figure>
+<p>table column descriptions:</p>
+<ul>
+<li>“row” and “column” indicate the parameter names for the correlation pair</li>
+<li>“cor” is the correlation coefficient (signed value)</li>
+<li>“p” is the p-value for the significance of the correlation</li>
+<li>“Rsq” is the R-squared value (unsigned, and default to sorted in descending order</li>
+<li>“Action” is a button that the user can click to view the xy plot for that pair of variables</li>
+</ul>
+<figure>
+<p align="center">
+<img src="resources/fig8.png" alt="drawing" width="800"/>
+<figcaption align="center">
+Fig.8 - Second output after clicking “Perform Analysis” button
+</figcaption>
+</p>
+</figure>
+<p>I grew to appreciate the Shiny table’s “Search” feature, which allowed me to retain a rather large list of results by lowering the Rsq limit to say 0.75, and then search for a specific parameter name as shown below. I think this is a useful feature when interacting with domain experts who may want to explore specific parameters.</p>
+<p>After clicking any of the “Action” button for a given row ,the xy plot will be displayed below. The code adds the Rsq to the main title based on the value from the selected row.</p>
+<figure>
+<p align="center">
+<img src="resources/fig9.png" alt="drawing" width="800"/>
+<figcaption align="center">
+Fig.9 - Third output after clicking “xy plot” button
+</figcaption>
+</p>
+</figure>
+</div>
+<div id="section-deployment" class="section level3">
+<h3>Deployment</h3>
+<p>I spent a bit of time investigating deployment options and eventually found shinyapps.io, which has a free service offering that caps at 25 hours of app usage per month. I felt this would be sufficient for the class demonstration. I configured a timeout of 6 minutes in hopes that this limit will not be exceeded while people are running the demo. If it does, the app will cease to work until the next month.</p>
+</div>
+<div id="section-conclusion" class="section level3">
+<h3>Conclusion</h3>
+<p>Getting up and running with Shiny was surprisingly easy. Even though I have many years of experience in software programming, I have had only limited exposure to GUI programming, and no experience with web apps, and much of the semantics were new to me. Nonetheless, within several hours and using the built-in “mtcars” dataset I had a basic implementation of this application which I was happy with. After that, I simply switched the dataset for the .csv file of my choosing and added some logic for data cleansing.</p>
+<p>Overall I was pleased with the interactivity and functionality that can be created in R by using just a few features (i.e. plot, text, button, and data table components). I was happily surprised by the features that came with Shiny’s data table (DT library). The search and ordering features were a pleasant surprise and provided a usability feature beyond that from what I got from my original JMP based implementation. With this feature, the value added by allowing the user to provide an R-squared limit for filtering in the first place was diminished. However I retained this feature for demonstration purposes anyway.</p>
+<p>Of course there are many more complex capabilities that Shiny provides, but it is not necessary to go to the extremes in order to develop a useful application in a short amount of time. I found this a fairly low barrier to entry for both me as the programmer as well as the end-user. This is in contrast to and end-user needing to install and interact with a desktop application like JMP which requires another license and specific training on that application.</p>
+<p>I was also pleasantly surprised about how easy it was to deploy to Shiny.io’s server. With a few clicks I had my web app available online! This is in contrast to the hours I spent reading up on how to create my own server which seemed to be quite more complex of a task to host my own apps. However there are obvious limitations and the associated costs can grow as your use-case scope and complexity increases.</p>
+<p>In closing, creating web apps with Shiny is a great way to provide end-users with a way to access and interact with their data without requiring them to install special software, or know how to code. After this experience I am going to continue expanding on this project at work for connecting the data source to an SQL database, as well as investigate other options for hosting on our own servers for security and privacy reasons, as using the shiny.io platform would not be sufficient for an enterprise system. After these pieces are in place, then the options are going to be nearly endless! I am really excited at the possibility of unlocking the power of our existing data to the many users who are currently limited by the availability and expertise of programming and analysis tools.</p>
+<p>Full source code can be found at <a href="https://github.com/kljohnson4good/R-shiny-corr-coeff">https://github.com/kljohnson4good/R-shiny-corr-coeff</a></p>
+</div>
+<div id="section-references" class="section level3">
+<h3>References</h3>
+<ol style="list-style-type: decimal">
+<li>Find out more about building applications with Shiny here: <a href="http://shiny.rstudio.com/">http://shiny.rstudio.com/</a></li>
+<li>Code to integrate shiny app into this blog obtained from: <a href="https://statsandr.com/blog/how-to-embed-a-shiny-app-in-blogdown/">https://statsandr.com/blog/how-to-embed-a-shiny-app-in-blogdown/</a></li>
+</ol>
+</div>
+</div>
