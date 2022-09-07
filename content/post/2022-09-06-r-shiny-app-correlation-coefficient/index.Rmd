@@ -148,7 +148,7 @@ After clicking any of the “Action” button for a given row ,the xy plot will 
 I spent a bit of time investigating deployment options and eventually found shinyapps.io, which has a free service offering that caps at 25 hours of app usage per month.  I felt this would be sufficient for the class demonstration.  I configured a timeout of 6 minutes in hopes that this limit will not be exceeded while people are running the demo.  If it does, the app will cease to work until the next month.
 
 ### Conclusion
-Getting up and running with Shiny was surprisingly easy.  Even though I have many years of experience in software programming, I have had only limited exposure to GUI programming, and no experience with web apps, and much of the semantics were new to me.  Nonetheless, within several hours and using the built-in “mtcars” dataset I had a basic implementation of this application which I was happy with.  After that, I simply switched the dataset for the .csv file of my choosing and added some logic for data cleansing.
+Getting up and running with Shiny was surprisingly easy.  Even though I bhave many years of experience in software programming, I have had only limited exposure to GUI programming, and no experience with web apps, and much of the semantics were new to me.  Nonetheless, within several hours and using the built-in “mtcars” dataset I had a basic implementation of this application which I was happy with.  After that, I simply switched the dataset for the .csv file of my choosing and added some logic for data cleansing.
 
 Overall I was pleased with the interactivity and functionality that can be created in R by using just a few features (i.e. plot, text, button, and data table components). I was happily surprised by the features that came with Shiny’s data table (DT library).  The search and ordering features were a pleasant surprise and provided a usability feature beyond that from what I got from my original JMP based implementation.  With this feature, the value added by allowing the user to provide an R-squared limit for filtering in the first place was diminished.  However I retained this feature for demonstration purposes anyway.
 
@@ -158,7 +158,7 @@ I was also pleasantly surprised about how easy it was to deploy to Shiny.io’s 
 
 In closing, creating web apps with Shiny is a great way to provide end-users with a way to access and interact with their data without requiring them to install special software, or know how to code.  After this experience I am going to continue expanding on this project at work for connecting the data source to an SQL database, as well as investigate other options for hosting on our own servers for security and privacy reasons, as using the shiny.io platform would not be sufficient for an enterprise system.  After these pieces are in place, then the options are going to be nearly endless!  I am really excited at the possibility of unlocking the power of our existing data to the many users who are currently limited by the availability and expertise of programming and analysis tools.
 
-Full source code can be found at [https://github.com/kljohnson4good/R-shiny-corr-coeff](https://github.com/kljohnson4good/R-shiny-corr-coeff)
+Full source code can be found at [https://github.com/kljohnson4good/R-code/tree/main/Shiny-corr-coeff](https://github.com/kljohnson4good/R-code/tree/main/Shiny-corr-coeff)
 
 ### References
 
