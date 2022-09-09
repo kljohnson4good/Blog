@@ -1,0 +1,4 @@
+<font size=3 color="FireBrick">category:</font>
+{{ range .Params.categories }}
+<font size=4><a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}"><kbd class="item-tag">{{ . }}</kbd></a></font>
+{{ end }}
