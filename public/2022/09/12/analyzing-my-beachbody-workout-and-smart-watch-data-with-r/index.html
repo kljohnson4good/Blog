@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.102.3" />
+
+
+<title>Analyzing My Beachbody Workout and Smart Watch Data with R - KJ&#39;s career development blog site</title>
+<meta property="og:title" content="Analyzing My Beachbody Workout and Smart Watch Data with R - KJ&#39;s career development blog site">
+
+
+  <link href='/me.png' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo-home-png-7411.png"
+         width="40"
+         height="40"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/kljohnson4good/Blog">GitHub</a></li>
+    
+    <li><a href="https://www.linkedin.com/in/kristi-johnson-b315a9157/">Linked-In</a></li>
+    
+    <li><a href="/tips-n-tricks/">Tips-n-Tricks</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">17 min read</span>
+    
+
+    <h1 class="article-title">Analyzing My Beachbody Workout and Smart Watch Data with R</h1>
+
+    
+    <span class="article-date">2022-09-12</span>
+    
+
+    <div class="article-content">
+      
+
+
+<p align="center">
+<font size = 4, color = "Blue">
+What I Learned From My Beachbody Workouts and Fitness Watch Data
+</font>
+</p>
+<p align="center">
+<img src="resources/health_pic.jpg" alt="drawing" width="500" />
+</p>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>I was looking for an analysis hobby project to dust off my R programming skills after over two years since completing my Master’s program. Thinking back on the data I’m accumulating in my life, I started wondering what my Beachbody online workout data would tell me.</p>
+<p>I began using Beachbody products in 2013 when my husband bought the DVD version of original <strong>P90x</strong> program with instructor <strong>Tony Horton</strong>, which we completed together to prepare for a Mui Thai Kickboxing class. After that awesome experience, some years later we purchased the <strong>P90x3</strong> DVD which reduced its workout lengths from ~45-60 minutes to a more palatable 30 minutes, which we could commit too with full time engineering jobs. I was pretty happy with the effectiveness of these workouts and continued to use them intermittently for the next several years.</p>
+<p>It wasn’t until 2019 when a friend introduced me to Beachbody On-Demand (<strong>BOD</strong>) that I began to consider branching out my workout experiences. Then when 2020 hit with COVID-19 and work-from-home, I pulled the trigger and bought the annual subscription, which at $99/yr is quite reasonable compared to a gym membership. After all, what kind of a price can you put on good health (mental and physical).</p>
+<p>The second addition to my digital workout arsenal came in the form of a <strong>Garmin Vivoactive 4S</strong> fitness watch. I am usually a tech trend lagger so it was my husband who bought this for me in Christmas 2020. I started tracking my walking, cycling and workouts so I could get a sense of my distance/steps, heart rate and expended calories during my workouts.</p>
+<p>I’ve been fairly diligent with the workouts since I schedule time on my work calendar to do them every day, but I was terrible at keeping track and didn’t record the workouts as I probably should have been. Now, almost 3 years later, I started wondering what my workout history could tell me.</p>
+<div id="data-sources-and-column-descriptions" class="section level2">
+<h2>Data Sources and Column Descriptions</h2>
+<p><strong>Beachbody On-Demand (BOD)</strong>:</p>
+<p>BOD does keep a workout history but with several major downsides:</p>
+<ol style="list-style-type: decimal">
+<li>The data is not extractable into a worksheet. To collect my data I had to login into my account, find the history and click each day to manually record the available information.</li>
+<li>Some data had to be filled in manually. For example the instructor information is not within the history, but something I had to pull from the workout description itself. I also wanted to know when I started and finished a program, which meant that I had to manually code the day number of the program myself. Lastly I wanted insights into the activity type, so I manually coded the exercise as Yoga, Cardio, Meditation, or Abs.</li>
+<li>The history only includes the past year’s worth of data. This means that some programs are not able to be adequately represented due to missing data.</li>
+<li>This manual encoding only has date information and no time-stamp to align the Garmin activity.</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">*Date</td>
+<td align="left">date of workout (year-month-day)</td>
+</tr>
+<tr class="even">
+<td align="left">Time</td>
+<td align="left">length of workout (minutes)</td>
+</tr>
+<tr class="odd">
+<td align="left">Program</td>
+<td align="left">the name of the program</td>
+</tr>
+<tr class="even">
+<td align="left">Instructor</td>
+<td align="left">the main instructor of the program</td>
+</tr>
+<tr class="odd">
+<td align="left">Activity.Type</td>
+<td align="left">distinguish yoga from cardio or short abs workouts</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Garmin Watch</strong>:</p>
+<p>My watch keeps track of calories, time, max and avg heart rate information. It also tracks other things but these are the ones I’m interested in for this initial analysis. Garmin keeps track of workout history and the Connect App conveniently has an extract-to-.csv format feature I ran on my computer. However the downside was that the watch only saved my workout history for the last 10 months because I had not been syncing my watch to my phone app on a regular basis. Lesson learned that I need to be doing this more frequently, at least every 4 weeks or so would probably be sufficient.</p>
+<table>
+<colgroup>
+<col width="52%" />
+<col width="48%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Column Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">*Date</td>
+<td align="left">date of workout (year-month-day hours:minutes:seconds), converted to just day to merge with BOD date</td>
+</tr>
+<tr class="even">
+<td align="left">Activity.Type</td>
+<td align="left">Cardio, Cycling, Running, Walking (Cardio is what I use during BOD workouts)</td>
+</tr>
+<tr class="odd">
+<td align="left">Calories</td>
+<td align="left">total calories burned during the workout</td>
+</tr>
+<tr class="even">
+<td align="left">Time</td>
+<td align="left">length of workout (hours:minutes:seconds), converted to minute integers to compare with BOD time</td>
+</tr>
+<tr class="odd">
+<td align="left">Avg.HR</td>
+<td align="left">average heart rate</td>
+</tr>
+<tr class="even">
+<td align="left">Max.HR</td>
+<td align="left">maximum heart rate</td>
+</tr>
+</tbody>
+</table>
+<p>*Date is a key column used to merge/combine the two datasets</p>
+</div>
+<div id="data-integrity-issues" class="section level2">
+<h2>Data Integrity Issues</h2>
+<p>Deriving an accurate dataset involved quite a few manual steps and fixing various issues.</p>
+<p><strong>User Error</strong>:</p>
+<ul>
+<li>I don’t typically turn on my watch activity tracker during yoga sessions, so I don’t have calorie information for those activity types.<br />
+</li>
+<li>At times I will start an activity tracking on my watch and forget to turn it off, which then forces me to discard the whole record. This will cause records to show up on BOD with no associated watch data.</li>
+<li>Activities where I forget to turn the watch activity tracking on, or forget to put the watch on all together.<br />
+</li>
+<li>Activities which start but get paused after only recording a few minutes of time and I forget to unpause again. Thus the calories indicate by the watch data are significantly misrepresenting the actual workout length from BOD.</li>
+</ul>
+<p>These issues will result in missing data and potentially erroneous data. Therefore, any conclusions will have to keep that in mind and may require an iterative process of the user (me) to review the results and correct as I discover them.</p>
+<p><strong>Multiple workouts in one day</strong>:</p>
+<p>The datasets are joined by date, without the datetime stamp. Therefore invalid data may be the result of combining datasets with one or more entry per day in either BOD or Garmin. In those cases, joining datasets may not know how to align due to lack of timestamp to assist in aligning them. These could be cleaned manually by making some intuitive inferences.</p>
+</div>
+<div id="prerequisites" class="section level2">
+<h2>Prerequisites</h2>
+<ol style="list-style-type: decimal">
+<li>install R packages</li>
+</ol>
+<pre class="r"><code>     # install.packages(&quot;ggplot2&quot;)
+    library(ggplot2)
+    #install.packages(&quot;dplyr&quot;)
+    library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+</div>
+</div>
+<div id="analysis" class="section level1">
+<h1>Analysis</h1>
+<p>Read the data file in .csv format and convert Date column data type to datetime:</p>
+<pre class="r"><code>data &lt;- read.csv(file = &quot;C:/Users/17077/Documents/Health/Beachbody Workouts.csv&quot;) #Beachbody On-Demand (BOD)
+# remove BOD rows without an instructor
+data &lt;- data[-which(data$Instructor == &quot;&quot;), ]
+
+# convert the Date column to the datetime data type
+data$Date &lt;- as.Date(data$Date, &quot;%m/%d/%Y&quot;)
+#data$Date &lt;- format(data$Date,&quot;%m/%d/%Y&quot;) # this changes it to a character
+# rename the column &#39;Time..m.&#39; to just &#39;Time&#39; to make the code simpler
+names(data)[names(data) == &#39;Time..m.&#39;] &lt;- &#39;Time&#39;
+#data$Yr_ww &lt;- paste(data$Year, &quot;_&quot;, data$Week)
+#summary(data)</code></pre>
+<p>create a combined dataset between BOD and Garmin watch. Filter only to Activity Type of ‘Cardio’ for this analysis:</p>
+<pre class="r"><code># read in the garmin file
+garmin &lt;- read.csv(file = &quot;C:/Users/17077/Documents/Health/Garmin_Activities.csv&quot;)
+garmin$Calories &lt;- strtoi(garmin$Calories)
+names(garmin)[names(garmin) == &#39;Time&#39;] &lt;- &#39;Time.garmin&#39;
+garmin$Timediff &lt;- round(as.numeric(as.difftime(garmin$Time.garmin, format = &quot;%H:%M:%S&quot;)),1) #  00:32:36
+
+# only keep garmin data with activity type set to Cardio because those will be the ones that align to the BOD activities
+dt_cardio &lt;- garmin[which(garmin$Activity.Type == &quot;Cardio&quot;), c(&quot;Date&quot;, &quot;Calories&quot;, &quot;Avg.HR&quot;, &quot;Max.HR&quot;, &quot;Timediff&quot;)]
+# convert the Date field type to be recognized as datetime data type, remove the time since we don&#39;t care about that
+dt_cardio$Date &lt;- as.Date(dt_cardio$Date, &quot;%Y-%m-%d %H:%M:%S&quot;) # 2022-09-09 12:30:39
+dt_cardio$Date &lt;- format(dt_cardio$Date,&quot;%m/%d/%Y&quot;) # converts back to a string
+dt_cardio$Date &lt;- as.Date(dt_cardio$Date, &quot;%m/%d/%Y&quot;)
+
+# inner join the two datasets based on date
+dt_comb &lt;- merge(dt_cardio, data[,c(&quot;Date&quot;,&quot;Program&quot;,&quot;Workout&quot;, &quot;Description&quot;,&quot;Instructor&quot;, &quot;Time&quot;, &quot;Activity.Type&quot;)], by = &quot;Date&quot;, all = TRUE) # outer join
+# remove missing values that have BOD data by no watch data or vice versa
+dt_comb &lt;- na.omit(dt_comb, cols=c(&quot;Calories&quot;, &quot;Program&quot;))
+dt_comb &lt;- dt_comb[which(dt_comb$Activity.Type == &quot;Cardio&quot;),] # filter only to the cardio programs for this analysis
+#dt_comb
+
+dt_wk &lt;- data %&gt;% group_by(Year, Week) %&gt;% summarize(workout_cnt = n()) # pivot by year and week to estimate the average number of workouts per week</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;Year&#39;. You can override using the
+## `.groups` argument.</code></pre>
+<pre class="r"><code>avg_workout_per_week &lt;- round(mean(dt_wk$workout_cnt),1)</code></pre>
+<div id="check-for-data-integrity-issues" class="section level3">
+<h3>Check for Data Integrity Issues</h3>
+<pre class="r"><code># look for inconsistencies between BOD Time and garmin&#39;s recorded Timediff
+# add blue reference lines around +/- 10 minute
+dt_comb %&gt;% ggplot(aes(x = Time, y = Timediff)) + geom_point() + labs(x = &quot;BOD time&quot;, y = &quot;Garmin Time&quot;, title = &quot;Garmin vs BOD workout length&quot;) +geom_abline(slope = 1, intercept = 1, color=&quot;grey&quot;) +  geom_abline(slope = 1, intercept = 10, color=&quot;blue&quot;, style=&quot;dashed&quot;) + geom_abline(slope = 1, intercept = -10, color=&quot;blue&quot;, style = &quot;dashed&quot;)</code></pre>
+<pre><code>## Warning: Ignoring unknown parameters: style
+## Ignoring unknown parameters: style</code></pre>
+<p><img src="/2022/09/12/analyzing-my-beachbody-workout-and-smart-watch-data-with-r/index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><font color="red" size=4>Values which are not within 10 minutes are indicative of a data integrity problem!</font>
+This shows 5 Garmin workout times below 10 minutes. This is a user-error scenario described previously.</p>
+</div>
+<div id="first-lets-look-at-some-overall-totals" class="section level2">
+<h2>First let’s look at some overall totals:</h2>
+<pre class="r"><code># how many overall workouts did I do in the past year?
+total_workouts &lt;- nrow(data) # total number of workouts is equal to the total number of rows
+
+# how many overall hours is this?
+total_time = sum(data$Time)
+total_time_h = round(total_time / 60,1)
+num_progs = length(unique(data$Program))
+num_inst = length(unique(data$Instructor))
+date_start_bod &lt;- min(data$Date)
+date_stop_bod &lt;- max(data$Date)
+bod_cals &lt;- sum(dt_comb$Calories)
+bod_lbs &lt;- round(bod_cals/3500,0)
+
+total_workouts_tracked &lt;- nrow(dt_comb)
+total_calories &lt;- sum(dt_comb$Calories)
+max_hr &lt;- max(dt_comb$Max.HR)
+avg_hr &lt;- round(mean(dt_comb$Avg.HR),0) # closest whole number
+date_start &lt;- min(dt_comb$Date)
+date_stop &lt;- max(dt_comb$Date)</code></pre>
+<p><font size = 5, color = "black">
+BOD Summary (09/28/2021 to 09/09/2022):
+</font>
+<font size = 5, color = "red"></p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Total Calories</td>
+<td>21204 (~ 6 lbs <span class="citation">@3500</span> cals per pound)</td>
+</tr>
+<tr class="even">
+<td>Total Number of Workouts</td>
+<td>162</td>
+</tr>
+<tr class="odd">
+<td>Total Time</td>
+<td>4767 min (79.4 hrs)</td>
+</tr>
+<tr class="even">
+<td>Avg #workouts per week</td>
+<td>3.5</td>
+</tr>
+<tr class="odd">
+<td>Variety of Experiences</td>
+<td>12 instructors over 19 different programs</td>
+</tr>
+</tbody>
+</table>
+<p></font></p>
+<p><font size = 5, color = "black">
+BOD + Garmin Summary (11/24/2021 to 09/09/2022):
+</font>
+<font size = 5, color = "red"></p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Total Number of Workouts</td>
+<td>95</td>
+</tr>
+<tr class="even">
+<td>Total calories burned</td>
+<td>21204</td>
+</tr>
+<tr class="odd">
+<td>Heart rate</td>
+<td>194 max, 134 avg</td>
+</tr>
+</tbody>
+</table>
+<p></font></p>
+<div id="beachbody-activity-types" class="section level3">
+<h3>Beachbody Activity Types</h3>
+<p>My Beachbody workouts were categorized into two activity types: Yoga and Cardio. (Note that Cardio is comprised of workouts that contain both cardio and weights or strength training, but for simplicity we’ll group anything not yoga into Cardio) I wanted to know what percentage of my workouts were yoga versus cardio?</p>
+<pre class="r"><code># visualize what percent of the workouts are Cardio vs Yoga
+activity_type &lt;- data %&gt;% group_by(Activity.Type) %&gt;% summarize(workout_cnt = n())
+# calculate as a percent (proportion)
+activity_type$prop = round(100*(activity_type$workout_cnt/sum(activity_type$workout_cnt)),0)
+
+# Compute the position of labels
+activity_type &lt;- activity_type %&gt;% 
+  arrange(workout_cnt) %&gt;%
+  mutate(ypos = cumsum(prop)- 0.1*prop )
+
+ggplot(activity_type, aes(x=&quot;&quot;, y=workout_cnt, fill=Activity.Type)) + geom_bar(stat=&quot;identity&quot;, width=1, color=&quot;white&quot;) + coord_polar(&quot;y&quot;, start=0) + theme_void() + geom_text(aes(y = ypos, label = paste(prop,&#39;%&#39;)), color = &quot;black&quot;, size=6) + labs(title = &quot;Beachbody On-Demand Activity Type (%)&quot;) </code></pre>
+<p><img src="/2022/09/12/analyzing-my-beachbody-workout-and-smart-watch-data-with-r/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><font size = 5 color = "red">About a quarter of my workouts are yoga while three quarters focus on cardio.</font></p>
+</div>
+<div id="beachbody-instructors" class="section level3">
+<h3>Beachbody Instructors</h3>
+<!--
+
+```r
+library(forcats) # adds fct_reorder to order barchart by value to create the pareto viz
+#plot(factor(data$Time), data$Year_Week, xlab="date", ylab="time (min)", main="Time per week") # built-in R plotting
+sum_inst <- data %>% group_by(Instructor) %>% summarize(workout_cnt = n())
+sum_inst <- sum_inst[order(sum_inst$workout_cnt, decreasing = TRUE),] # order descending
+# calculate a new column as the percent of total workouts
+sum_inst$workout_pct = round(100*(sum_inst$workout_cnt/sum(sum_inst$workout_cnt)),0)
+sum_inst
+```
+
+```
+## # A tibble: 12 × 3
+##    Instructor      workout_cnt workout_pct
+##    <chr>                 <int>       <dbl>
+##  1 Autumn                   84          52
+##  2 Tony Horton              34          21
+##  3 Jericho                  13           8
+##  4 Elise                     7           4
+##  5 Ted                       6           4
+##  6 Vitas                     6           4
+##  7 Dr. Mark Cheng            4           2
+##  8 Shaun T                   3           2
+##  9 Jennifer Jacobs           2           1
+## 10 Andrea Rogers             1           1
+## 11 Carmel                    1           1
+## 12 Megan Davies              1           1
+```
+
+```r
+# plot the bar chart ordered by value so that the instructor with the most workouts is listed first and so on
+sum_inst %>% ggplot(aes(x=fct_reorder(Instructor, workout_pct), y = workout_pct)) + geom_col(fill="steelblue") + coord_flip() + labs(y = "% Workouts", x = "Instructor", title = "% Workouts by Instructor (count)") + geom_text(aes(label=workout_cnt), vjust=0.1, hjust=1.2, color="white", size=4)
+```
+
+<img src="/2022/09/12/analyzing-my-beachbody-workout-and-smart-watch-data-with-r/index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+-->
+<pre class="r"><code># try the bar chart again but use a stacked viz to show the activty type per instructor
+dt_inst_act &lt;- data %&gt;% group_by(Instructor, Activity.Type) %&gt;% summarize(workout_cnt = n())</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;Instructor&#39;. You can override using the
+## `.groups` argument.</code></pre>
+<pre class="r"><code>dt_inst_act &lt;- dt_inst_act[order(dt_inst_act$workout_cnt, decreasing = TRUE),] # order decending by workout total count
+# calculate a new column as the percent of total workouts
+dt_inst_act$workout_pct = round(100*(dt_inst_act$workout_cnt/sum(dt_inst_act$workout_cnt)),0)
+
+names(sum_inst)[names(sum_inst) == &#39;workout_cnt&#39;] &lt;- &#39;instructor_cnt&#39; # rename to instructor count
+dt_comb2 = merge(dt_inst_act, sum_inst[,c(&quot;Instructor&quot;,&quot;instructor_cnt&quot;)], by=&quot;Instructor&quot;)
+
+#dt_comb2
+# plot the bar chart ordered by value so that the instructor with the most workouts is listed first and so on
+#dt_comb2 %&gt;% ggplot(aes(x=fct_reorder(Instructor, instructor_cnt), y = workout_pct, fill = Activity.Type)) + geom_col(position=&quot;stack&quot;) +  #coord_flip() + labs(y = &quot;% Workouts&quot;, x = &quot;Instructor&quot;, title = &quot;Workouts by Instructor&quot;) + geom_text(aes(Instructor, instructor_cnt, #label=instructor_cnt, fill=NULL), data = sum_inst)
+
+# plot the x-axis using the workout percent of total, but label with the absolute number to put into context
+ggplot(dt_comb2, aes(reorder(Instructor, instructor_cnt, sum), workout_pct, fill = Activity.Type)) +
+  geom_col() +
+  geom_text(
+    aes(label = instructor_cnt, group = Instructor), 
+    stat = &#39;summary&#39;, fun = sum, vjust = 0, hjust=-.2) + coord_flip() +  labs(y = &quot;% Workouts&quot;, x = &quot;Instructor&quot;, title = &quot;Workouts by Instructor&quot;)</code></pre>
+<p><img src="/2022/09/12/analyzing-my-beachbody-workout-and-smart-watch-data-with-r/index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><font size=5 color="red">Autumn is clearly my favorite instructor. I’ve done 84 of her workouts (&gt;50% of the total workouts), while Tony Horton comes in second at 34 workouts(&gt;20% of the total workouts). However clearly Tony has been my go-to yoga instructor!</font></p>
+</div>
+</div>
+<div id="how-long-is-each-workout" class="section level2">
+<h2>How Long Is Each Workout?</h2>
+<pre class="r"><code># histogram with 5 minute bin sizes
+ggplot(data, aes(x=Time)) + geom_histogram(binwidth=5, color=&quot;black&quot;, fill = &quot;steelblue&quot;) + geom_vline(aes(xintercept=median(Time)),
+            color=&quot;red&quot;, linetype=&quot;dashed&quot;, size=1) + labs(x = &quot;workout length (min)&quot;, title = &quot;Distribution of BOD Workout Length&quot;)</code></pre>
+<p><img src="/2022/09/12/analyzing-my-beachbody-workout-and-smart-watch-data-with-r/index_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<pre class="r"><code>#plot(data$Date, data$Time, cex = 0.9, xaxt = &quot;n&quot;, color=data$Activity.Type)
+# change the data label format for the Date x-axis
+#axis(1, data$Date, format(data$Date, &quot;%d-%m-%y&quot;))
+
+# calculate the median time
+time_med = median(data$Time)
+
+data %&gt;% ggplot(aes(Date, Time, color=Activity.Type)) + geom_point() + geom_hline(yintercept = time_med, color=&quot;red&quot;, linetype=&quot;dashed&quot;, size=1) + labs(y = &quot;workout length (min)&quot;, title = paste(&quot;Workout Length by Date (median = &quot;,time_med,&quot; min)&quot;))</code></pre>
+<p><img src="/2022/09/12/analyzing-my-beachbody-workout-and-smart-watch-data-with-r/index_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
+<p><font size=5 color="red">I’ve been consistently completing ~ 30 minute workouts</font></p>
+<p>The typical (median) workout length is 30 minutes. The higher values on the left-hand side were due to ending a previous program (80-Day Obsession) which had workouts between 30-60 minutes.</p>
+</div>
+<div id="which-day-do-i-prefer-working-out" class="section level2">
+<h2>Which Day do I prefer Working Out?</h2>
+<pre class="r"><code>data$weekday &lt;- weekdays(data$Date)
+dt_week &lt;- data %&gt;% group_by(weekday, Day.Of.Week) %&gt;% summarize(workout_cnt = n())</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;weekday&#39;. You can override using the
+## `.groups` argument.</code></pre>
+<pre class="r"><code>ggplot(data=dt_week, aes(x=reorder(weekday, Day.Of.Week), y=workout_cnt)) + geom_bar(stat=&quot;identity&quot;) + labs(x = &quot;Day of Week&quot;, y = &quot;#workouts&quot;, title = &quot;Workouts by Day of Week&quot;)</code></pre>
+<p><img src="/2022/09/12/analyzing-my-beachbody-workout-and-smart-watch-data-with-r/index_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><font color="red" size=5>Most preferred days to workout are Monday-Thursday. Least preferred day is Saturday when I tend to do non-BOD activities</font></p>
+</div>
+<div id="which-beachbody-programs-have-i-experienced" class="section level2">
+<h2>Which Beachbody Programs Have I Experienced?</h2>
+<pre class="r"><code># visualize what percent of the workouts are Cardio vs Yoga
+dt_pgm &lt;- data %&gt;% group_by(Program, Instructor) %&gt;% summarize(workout_cnt = n())</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;Program&#39;. You can override using the
+## `.groups` argument.</code></pre>
+<pre class="r"><code># calculate as a percent (proportion)
+dt_pgm$prop = round(100*(dt_pgm$workout_cnt/sum(dt_pgm$workout_cnt)),0)
+#sort in descending order
+ggplot(dt_pgm, aes(x=workout_cnt)) + geom_histogram(binwidth=1, color=&quot;black&quot;, fill = &quot;steelblue&quot;) + labs(x = &quot;Program count&quot;, title = &quot;Distribution Workouts by Program&quot;)</code></pre>
+<p><img src="/2022/09/12/analyzing-my-beachbody-workout-and-smart-watch-data-with-r/index_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<pre class="r"><code>knitr::kable(dt_pgm[order(-dt_pgm$workout_cnt),])</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Program</th>
+<th align="left">Instructor</th>
+<th align="right">workout_cnt</th>
+<th align="right">prop</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">9 Week Control Freak</td>
+<td align="left">Autumn</td>
+<td align="right">69</td>
+<td align="right">43</td>
+</tr>
+<tr class="even">
+<td align="left">P90x3</td>
+<td align="left">Tony Horton</td>
+<td align="right">24</td>
+<td align="right">15</td>
+</tr>
+<tr class="odd">
+<td align="left">Morning Meltdown 100</td>
+<td align="left">Jericho</td>
+<td align="right">11</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="left">22 Minute Hard Corps</td>
+<td align="left">Tony Horton</td>
+<td align="right">10</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="left">80 day obsession</td>
+<td align="left">Autumn</td>
+<td align="right">6</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="left">Barre Blend</td>
+<td align="left">Elise</td>
+<td align="right">6</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">21 Day Fix Extreme Real Time</td>
+<td align="left">Autumn</td>
+<td align="right">4</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">3 Week Yoga Retreat</td>
+<td align="left">Vitas</td>
+<td align="right">4</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">Tai Cheng</td>
+<td align="left">Dr. Mark Cheng</td>
+<td align="right">4</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">21 Day Fix Real Time</td>
+<td align="left">Autumn</td>
+<td align="right">3</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">3-Day Yoga Refresh</td>
+<td align="left">Ted</td>
+<td align="right">3</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">Focus T25</td>
+<td align="left">Shaun T</td>
+<td align="right">3</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">Yoga Studio</td>
+<td align="left">Ted</td>
+<td align="right">3</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">3-Day Yoga Refresh</td>
+<td align="left">Vitas</td>
+<td align="right">2</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Job 1</td>
+<td align="left">Jennifer Jacobs</td>
+<td align="right">2</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Yoga Studio</td>
+<td align="left">Jericho</td>
+<td align="right">2</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">#MBF</td>
+<td align="left">Megan Davies</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">21 Day Fix Extreme</td>
+<td align="left">Autumn</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">3-Day Yoga Refresh</td>
+<td align="left">Elise</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">4 Weeks for Every Body</td>
+<td align="left">Autumn</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Just Your Body Weight</td>
+<td align="left">Carmel</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Xtend Barre</td>
+<td align="left">Andrea Rogers</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p><font color="red" size=5>The past year has been dominated by the ‘9 Week Control Freak’ program by instructor Autumn Calabrese. That program has 45 total workouts (5 workouts per week x 3 phases x 3 weeks per phase). Since I’ve done 69 from that program, it shows that I completed it once and started doing it again.</font></p>
+<div id="calories-vs-heart-rate" class="section level3">
+<h3>Calories vs Heart Rate</h3>
+<p>Questions to answer:</p>
+<ol style="list-style-type: decimal">
+<li>What is the correlation of rate of calories burned versus the average heart rate during the workout?</li>
+<li>Quantify the calories burned per minute versus the average heart rate to associate the payoff to the effort.</li>
+</ol>
+<pre class="r"><code>ggplot(dt_comb, aes(x=Program, y = Avg.HR)) + geom_boxplot() + coord_flip() + labs(title = &quot;Average Heart rate by Program&quot;)</code></pre>
+<p><img src="/2022/09/12/analyzing-my-beachbody-workout-and-smart-watch-data-with-r/index_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre class="r"><code># calculate calories per minute
+dt_comb$cal_per_min = dt_comb$Calories / dt_comb$Timediff # both time and calories from the watch
+
+#ggplot(dt_comb, aes(x=Program, y = cal_per_min)) + geom_boxplot() + coord_flip() + labs(title = &quot;Average Calories Burned per Minute by Program&quot;)
+
+
+#lm_fit &lt;- lm(Avg.HR ~ cal_per_min , data=dt_comb) # regression fit equation
+lm_fit &lt;- lm(cal_per_min ~ Avg.HR , data=dt_comb) # regression fit equation
+r2 &lt;- round(summary(lm_fit)$r.squared,2)
+slope = round(coef(lm_fit)[[&quot;Avg.HR&quot;]] * 10,1) 
+#fit_line &lt;- data.frame(pred = predict(cal_fit = predict(lm_fit, dt_comb))
+# attributes(summary(lm_fit))
+
+annotations &lt;- data.frame(
+   xpos = c(-Inf, -Inf),
+   ypos =  c(Inf, Inf),
+   annotateText = c(paste(&quot;fit line slope: &quot;, slope ,&quot; more calories for additional 10 bpm&quot;),
+                    paste(&quot;fit line R-squared:&quot;, r2)),
+   hjustvar = c(0,0) ,
+   vjustvar = c(1,3))
+
+# display calories by average heartrate
+dt_comb %&gt;% ggplot(aes(x = Avg.HR, y = cal_per_min)) + geom_point() + labs(x = &quot;Avg.HR (bpm)&quot;, y = &quot;calories per minute&quot;, title = &quot;Calories burned per min vs Avg Heart rate&quot;) + geom_smooth(method=&quot;lm&quot;, se = FALSE) +
+  geom_text(data = annotations, aes(x=xpos,y=ypos,hjust=hjustvar,
+                vjust=vjustvar,label=annotateText)) + scale_y_continuous(breaks = seq(0, 100, by = 1), minor_breaks = seq(0,0,0))</code></pre>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="/2022/09/12/analyzing-my-beachbody-workout-and-smart-watch-data-with-r/index_files/figure-html/unnamed-chunk-12-2.png" width="672" />
+This two-way plot shows a pretty strong correlation between average heart rate and calories burned per minute. This data supports a fairly basic intuition that higher effort (higher BPM) will result in more calories burned. But note that this calculation provides an actual number.</p>
+<p><font size=5 color="red">An extra 1.2 calories per minute can be burned by increasing heart rate by 10 bpm.</font></p>
+</div>
+<div id="run-a-one-way-anova-to-test-for-significance-of-avg.hr-by-program" class="section level3">
+<h3>Run a one-way ANOVA to test for significance of Avg.HR by Program</h3>
+<p>A Tukey test can run a simultaneous comparison to group the programs by Avg.HR</p>
+<pre class="r"><code>library(agricolae)
+anova &lt;- aov(Avg.HR ~ Program, data = dt_comb)
+#summary(anova)
+# resource: https://r-graph-gallery.com/84-tukey-test.html
+#tukey = TukeyHSD(x=anova, conf.level = 0.95)
+#tukey
+
+# agricolae library
+# resource: https://rpubs.com/aaronsc32/post-hoc-analysis-tukey
+tukey &lt;- HSD.test(anova, trt=&#39;Program&#39;, alpha=0.06) # 0.05 alpha seemed too selective, grouping too many in &#39;ab&#39;
+tukey</code></pre>
+<pre><code>## $statistics
+##    MSerror Df     Mean       CV
+##   57.18118 82 134.3158 5.629885
+## 
+## $parameters
+##    test  name.t ntr StudentizedRange alpha
+##   Tukey Program  13         4.731866  0.06
+## 
+## $means
+##                                Avg.HR       std  r Min Max    Q25   Q50    Q75
+## 21 Day Fix Extreme Real Time 125.6667 18.339393  3 105 140 118.50 132.0 136.00
+## 21 Day Fix Real Time         129.3333  8.736895  3 122 139 124.50 127.0 133.00
+## 22 Minute Hard Corps         139.2857  7.341986  7 128 148 134.50 143.0 143.50
+## 4 Weeks for Every Body       104.0000        NA  1 104 104 104.00 104.0 104.00
+## 9 Week Control Freak         134.4286  6.955421 63 118 156 130.00 135.0 138.00
+## Barre Blend                  134.5000  6.862944  6 127 144 130.50 132.0 139.50
+## Focus T25                    143.3333  3.511885  3 140 147 141.50 143.0 145.00
+## Job 1                        125.5000 12.020815  2 117 134 121.25 125.5 129.75
+## Just Your Body Weight        140.0000        NA  1 140 140 140.00 140.0 140.00
+## Morning Meltdown 100         142.0000 11.313708  2 134 150 138.00 142.0 146.00
+## P90x3                        142.0000  2.828427  2 140 144 141.00 142.0 143.00
+## Tai Cheng                    127.0000        NA  1 127 127 127.00 127.0 127.00
+## Xtend Barre                  124.0000        NA  1 124 124 124.00 124.0 124.00
+## 
+## $comparison
+## NULL
+## 
+## $groups
+##                                Avg.HR groups
+## Focus T25                    143.3333      a
+## Morning Meltdown 100         142.0000      a
+## P90x3                        142.0000      a
+## Just Your Body Weight        140.0000      a
+## 22 Minute Hard Corps         139.2857      a
+## Barre Blend                  134.5000      a
+## 9 Week Control Freak         134.4286      a
+## 21 Day Fix Real Time         129.3333     ab
+## Tai Cheng                    127.0000     ab
+## 21 Day Fix Extreme Real Time 125.6667     ab
+## Job 1                        125.5000     ab
+## Xtend Barre                  124.0000     ab
+## 4 Weeks for Every Body       104.0000      b
+## 
+## attr(,&quot;class&quot;)
+## [1] &quot;group&quot;</code></pre>
+<pre class="r"><code># vlookup the group assignment to the program
+#boxplot(dt_comb$Avg.HR ~ dt_comb$Program , ylim=c(min(dt_comb$Avg.HR) , 1.1*max(dt_comb$Avg.HR)) , ylab=&quot;value&quot; , main=&quot;&quot;) + coord_flip()
+# col=my_colors[as.numeric(LABELS[,1])]
+
+# Reference: http://rfunction.com/archives/1302
+#ggplot(dt_comb, aes(x=Program, y = Avg.HR)) + geom_boxplot() + coord_flip() + labs(title = &quot;Average HR by Program&quot;)
+par(mar=c(5,12,4,1)+0.1, mpg=c(10,1,0)) # widen margin to fit program name labels mar=c(bottom, left, top, and right. )</code></pre>
+<pre><code>## Warning in par(mar = c(5, 12, 4, 1) + 0.1, mpg = c(10, 1, 0)): &quot;mpg&quot; is not a
+## graphical parameter</code></pre>
+<pre class="r"><code># mpg=c((i.e. xlab and ylab in plot), the second the tick-mark labels, and third the tick marks.)
+plot(tukey, horiz=TRUE, las=1) # las = 1 for horizontal tick mark labels
+title( xlab=&quot;Avg.HR&quot;)</code></pre>
+<p><img src="/2022/09/12/analyzing-my-beachbody-workout-and-smart-watch-data-with-r/index_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><font color="red" size=5>Programs which give me the highest average heart rate (and hence more calories burned per minute) are Focus T25, Morning Meltdown 100, P90x3, JYBW, Barre Blend and 9 Week Control Freak. Even though I only did 1 workout from the ‘4 Weeks for Every Body’ program, it’s clear that it’s not as efficient use of time as the other programs.</font></p>
+</div>
+</div>
+</div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+<p>I was proud of myself for being consistent with my workouts for the last 12 months, but somewhat surprised to see how few pounds worth of calories I had actually burned from the Beachbody workouts (only 6 pounds). However it was motivating to see data that supports the additional calories per minute I can burn if I up my effort and get my heart rate up for longer periods of time when I am working out. I also appreciated the data that supported my intuition about which programs are more effective than others for heart rate and effective calorie burning.</p>
+<p>The only disappointment I encountered through this process was the difficulty to extract the Beachbody data from the app and being limited by data beyond a year ago. I was really hoping to compare complete programs like Barre Blend and 80 Day Obsession which were completed over a year ago.</p>
+<p>The analysis enabled me to realize how technological feature advancement in smart watches could improve the quality of the data and insights. For example the ability to connect directly to online programs like BOD could enable users to easily associate calories and heart rate to specific programs and workouts. Additionally, I learned how to enable my smart watch to auto-start and auto-stop activities which I hope will improve my partial and missing calories and heart rate data. Before this analysis I didn’t realize the impact that my user-errors would have on the analytics.</p>
+<p>I look forward to the future of fitness watches and automated activity tracking capabilities, and I hope there will be more synergy with online workout programs to bring fitness tips and insights to users like myself.</p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

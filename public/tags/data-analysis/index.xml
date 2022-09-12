@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Analysis on KJ&#39;s career development blog site</title>
+    <link>/tags/data-analysis/</link>
+    <description>Recent content in Data Analysis on KJ&#39;s career development blog site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>R Analysis of Beachbody Workout and Smart Watch Data</title>
+      <link>/2022/09/12/r-analysis-of-beachbody-workout-and-smart-watch-data/</link>
+      <pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/12/r-analysis-of-beachbody-workout-and-smart-watch-data/</guid>
+      <description>What I Learned From My Beachbody Workouts and Fitness Watch DataIntroductionI was looking for an analysis hobby project to dust off my R programming skills after over two years since completing my Master’s program. Thinking back on the data I’m accumulating in my life, I started wondering what my Beachbody online workout data would tell me.
+I began using Beachbody products in 2013 when my husband bought the DVD version of original P90x program with instructor Tony Horton, which we completed together to prepare for a Mui Thai Kickboxing class.</description>
+    </item>
+    
+  </channel>
+</rss>

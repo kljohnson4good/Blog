@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.102.3" />
+
+
+<title>R Analysis of Beachbody Workout and Smart Watch Data - KJ&#39;s career development blog site</title>
+<meta property="og:title" content="R Analysis of Beachbody Workout and Smart Watch Data - KJ&#39;s career development blog site">
+
+
+  <link href='/me.png' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo-home-png-7411.png"
+         width="40"
+         height="40"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/kljohnson4good/Blog">GitHub</a></li>
+    
+    <li><a href="https://www.linkedin.com/in/kristi-johnson-b315a9157/">Linked-In</a></li>
+    
+    <li><a href="/tips-n-tricks/">Tips-n-Tricks</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">12 min read</span>
+    
+
+    <h1 class="article-title">R Analysis of Beachbody Workout and Smart Watch Data</h1>
+
+    
+    <span class="article-date">2022-09-12</span>
+    
+
+    <div class="article-content">
+      
+
+
+<p align="center">
+<font size = 4, color = "Blue">
+What I Learned From My Beachbody Workouts and Fitness Watch Data
+</font>
+</p>
+<p align="center">
+<img src="resources/health_pic.jpg" alt="drawing" width="500" />
+</p>
+<!--- below style updates the table to use a smaller font for more appealing output format --->
+<style>
+    th, td { 
+      font-size: 16px;
+      border-collapse: collapse;
+      border-width:3px
+    }
+    </style>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>I was looking for an analysis hobby project to dust off my R programming skills after over two years since completing my Master’s program. Thinking back on the data I’m accumulating in my life, I started wondering what my Beachbody online workout data would tell me.</p>
+<p>I began using Beachbody products in 2013 when my husband bought the DVD version of original <strong>P90x</strong> program with instructor <strong>Tony Horton</strong>, which we completed together to prepare for a Mui Thai Kickboxing class. After that awesome experience, some years later we purchased the <strong>P90x3</strong> DVD which reduced its workout lengths from ~45-60 minutes to a more palatable 30 minutes, which we could commit too with full time engineering jobs. I was pretty happy with the effectiveness of these workouts and continued to use them intermittently for the next several years.</p>
+<p>It wasn’t until 2019 when a friend introduced me to Beachbody On-Demand (<strong>BOD</strong>) that I began to consider branching out my workout experiences. Then when 2020 hit with COVID-19 and work-from-home, I pulled the trigger and bought the annual subscription, which at $99/yr is quite reasonable compared to a gym membership. After all, what kind of a price can you put on good health (mental and physical).</p>
+<p>The second addition to my digital workout arsenal came in the form of a <strong>Garmin Vivoactive 4S</strong> fitness watch. I am usually a tech trend lagger so it was my husband who bought this for me in Christmas 2020. I started tracking my walking, cycling and workouts so I could get a sense of my distance/steps, heart rate and expended calories during my workouts.</p>
+<p>I’ve been fairly diligent with the workouts since I schedule time on my work calendar to do them every day, but I was terrible at keeping track and didn’t record the workouts as I probably should have been. Now, almost 3 years later, I started wondering what my workout history could tell me.</p>
+<div id="data-sources-and-column-descriptions" class="section level2">
+<h2>Data Sources and Column Descriptions</h2>
+<p><strong>Beachbody On-Demand (BOD)</strong>:</p>
+<p>BOD does keep a workout history but with several major downsides:</p>
+<ol style="list-style-type: decimal">
+<li>The data is not extractable into a worksheet. To collect my data I had to login into my account, find the history and click each day to manually record the available information.</li>
+<li>Some data had to be filled in manually. For example the instructor information is not within the history, but something I had to pull from the workout description itself. I also wanted to know when I started and finished a program, which meant that I had to manually code the day number of the program myself. Lastly I wanted insights into the activity type, so I manually coded the exercise as Yoga, Cardio, Meditation, or Abs.</li>
+<li>The history only includes the past year’s worth of data. This means that some programs are not able to be adequately represented due to missing data.</li>
+<li>This manual encoding only has date information and no time-stamp to align the Garmin activity.</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">*Date</td>
+<td align="left">date of workout (year-month-day)</td>
+</tr>
+<tr class="even">
+<td align="left">Time</td>
+<td align="left">length of workout (minutes)</td>
+</tr>
+<tr class="odd">
+<td align="left">Program</td>
+<td align="left">the name of the program</td>
+</tr>
+<tr class="even">
+<td align="left">Instructor</td>
+<td align="left">the main instructor of the program</td>
+</tr>
+<tr class="odd">
+<td align="left">Activity.Type</td>
+<td align="left">distinguish yoga from cardio or short abs workouts</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Garmin Watch</strong>:</p>
+<p>My watch keeps track of calories, time, max and avg heart rate information. It also tracks other things but these are the ones I’m interested in for this initial analysis. Garmin keeps track of workout history and the Connect App conveniently has an extract-to-.csv format feature I ran on my computer. However the downside was that the watch only saved my workout history for the last 10 months because I had not been syncing my watch to my phone app on a regular basis. Lesson learned that I need to be doing this more frequently.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">*Date</td>
+<td align="left">date of workout (year-month-day hr:min:sec)</td>
+</tr>
+<tr class="even">
+<td align="left">Activity.Type</td>
+<td align="left">Cardio, Cycling, Running, Walking</td>
+</tr>
+<tr class="odd">
+<td align="left">Calories</td>
+<td align="left">total calories burned during the workout</td>
+</tr>
+<tr class="even">
+<td align="left">Time</td>
+<td align="left">length of workout (hr:min:sec), converted to minute integers</td>
+</tr>
+<tr class="odd">
+<td align="left">Avg.HR</td>
+<td align="left">average heart rate (bpm)</td>
+</tr>
+<tr class="even">
+<td align="left">Max.HR</td>
+<td align="left">maximum heart rate (bpm)</td>
+</tr>
+</tbody>
+</table>
+<p>*Date is a key column used to merge/combine the two datasets. Note that time is removed from the watch data so alignment is on day only.</p>
+<p>The combined dataset between BOD and Garmin will filter to only Activity Type of ‘Cardio’, which is what I use when setting up activity tracking on my watch. I don’t usually turn on tracking for yoga or abs workout types so that data is not available to correlate.</p>
+</div>
+<div id="data-integrity-issues" class="section level2">
+<h2>Data Integrity Issues</h2>
+<p>Deriving an accurate dataset involved quite a few manual steps and fixing various issues.</p>
+<p><strong>User Error</strong>:</p>
+<ul>
+<li>At times I will start an activity tracking on my watch and forget to turn it off, which then forces me to discard the whole record. This will cause records to show up on BOD with no associated watch data.</li>
+<li>Activities where I forget to turn the watch activity tracking on, or forget to put the watch on all together.<br />
+</li>
+<li>Activities which start but get paused after only recording a few minutes of time and I forget to unpause again. Thus the calories indicate by the watch data are significantly misrepresenting the actual workout length from BOD.</li>
+</ul>
+<p>These issues will result in missing data and potentially erroneous data. Therefore, any conclusions will have to keep that in mind and may require an iterative process of the user (me) to review the results and correct as I discover them.</p>
+<p><strong>Multiple workouts in one day</strong>:</p>
+<p>The datasets are joined by date, without the datetime stamp. Therefore invalid data may be the result of combining datasets with one or more entry per day in either BOD or Garmin. In those cases, joining datasets may not know how to align due to lack of timestamp to assist in aligning them. These could be cleaned manually by making some intuitive inferences.</p>
+</div>
+<div id="software-prerequisites" class="section level2">
+<h2>Software Prerequisites</h2>
+<ol style="list-style-type: decimal">
+<li>R lanugauge, R-Studio IDE</li>
+<li>R packages: ggplot2, dplyr, agricolae</li>
+</ol>
+</div>
+</div>
+<div id="analysis-high-level-summary" class="section level1">
+<h1>Analysis High Level Summary</h1>
+<p><font size = 5, color = "black">
+From 09/28/2021 to 09/09/2022:
+</font>
+<font size = 5, color = "red"></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">BOD Summary</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Total Calories:</td>
+<td>21204 (~ 6 lbs <span class="citation">@3500</span> cals per lb)</td>
+</tr>
+<tr class="even">
+<td align="left">Total #Workouts:</td>
+<td>162</td>
+</tr>
+<tr class="odd">
+<td align="left">Total Time:</td>
+<td>4767 min (79.4 hrs)</td>
+</tr>
+<tr class="even">
+<td align="left">Avg #Workouts per week:</td>
+<td>3.5</td>
+</tr>
+<tr class="odd">
+<td align="left">Variety of Experiences:</td>
+<td>12 instructors over 19 different programs</td>
+</tr>
+</tbody>
+</table>
+<p></font></p>
+<p><font size = 5, color = "black">
+From 11/24/2021 to 09/09/2022:
+</font>
+<font size = 5, color = "red"></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">BOD with Watch Data</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Total #Workouts:</td>
+<td>95</td>
+</tr>
+<tr class="even">
+<td align="left">Heart rate:</td>
+<td>165 (avg max), 134 (overall avg)</td>
+</tr>
+<tr class="odd">
+<td align="left">calories burned per min:</td>
+<td>8.7 (avg)</td>
+</tr>
+</tbody>
+</table>
+<p></font></p>
+<div id="mismatch-of-recorded-time" class="section level3">
+<h3>Mismatch of Recorded Time</h3>
+<p>Compare BOD time to watch time to understand how aligned the recorded calorie and HR data from the watch are to the completed workout. Values not within about 10 minutes of each other indicate an integrity issue.</p>
+<p>To work around that problem, the analysis will calculate calories-per-minute using the watch time only, so that it is a relative number. Note then that <font color="red">the total calories reported by the watch is less than the true value of calories burned during the BOD workouts</font>.</p>
+<p><img src="/2022/09/12/r-analysis-of-beachbody-workout-and-smart-watch-data/index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>This graph shows 5 Garmin workout times below 10 minutes when the video time is greater than 20 minutes. This depicts the user issues discussed previously.</p>
+</div>
+<div id="beachbody-activity-types" class="section level2">
+<h2>Beachbody Activity Types</h2>
+<p>My Beachbody workouts were categorized into 3 activity types: Yoga, Cardio and Abs. I wanted to know what percentage of my workouts were yoga versus cardio.</p>
+<p><img src="/2022/09/12/r-analysis-of-beachbody-workout-and-smart-watch-data/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><font size = 5 color = "red">About a quarter of my workouts are yoga while three quarters focus on cardio.</font></p>
+</div>
+<div id="beachbody-instructors" class="section level2">
+<h2>Beachbody Instructors</h2>
+<!--
+
+```
+## # A tibble: 12 × 3
+##    Instructor      workout_cnt workout_pct
+##    <chr>                 <int>       <dbl>
+##  1 Autumn                   84          52
+##  2 Tony Horton              34          21
+##  3 Jericho                  13           8
+##  4 Elise                     7           4
+##  5 Ted                       6           4
+##  6 Vitas                     6           4
+##  7 Dr. Mark Cheng            4           2
+##  8 Shaun T                   3           2
+##  9 Jennifer Jacobs           2           1
+## 10 Andrea Rogers             1           1
+## 11 Carmel                    1           1
+## 12 Megan Davies              1           1
+```
+
+<img src="/2022/09/12/r-analysis-of-beachbody-workout-and-smart-watch-data/index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+-->
+<p><img src="/2022/09/12/r-analysis-of-beachbody-workout-and-smart-watch-data/index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><font size=5 color="red">Autumn is clearly my favorite instructor. I’ve done 84 of her workouts (&gt;50% of the total workouts), while Tony Horton comes in second at 34 workouts(&gt;20% of the total workouts). However clearly Tony has been my go-to yoga instructor!</font></p>
+</div>
+<div id="how-long-is-each-workout" class="section level2">
+<h2>How Long Is Each Workout?</h2>
+<p><img src="/2022/09/12/r-analysis-of-beachbody-workout-and-smart-watch-data/index_files/figure-html/unnamed-chunk-9-1.png" width="672" /><img src="/2022/09/12/r-analysis-of-beachbody-workout-and-smart-watch-data/index_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
+<p><font size=5 color="red">I’ve been consistently completing ~ 30 minute workouts</font></p>
+<p>The typical (median) workout length is 30 minutes. The higher values on the left-hand side were due to ending a previous program (80-Day Obsession) which had workouts between 30-60 minutes.</p>
+</div>
+<div id="which-day-do-i-prefer-working-out" class="section level2">
+<h2>Which Day do I prefer Working Out?</h2>
+<p><img src="/2022/09/12/r-analysis-of-beachbody-workout-and-smart-watch-data/index_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><font color="red" size=5>Most preferred days to workout are Monday-Thursday. Least preferred day is Saturday when I tend to do non-BOD activities</font></p>
+</div>
+<div id="program-variety" class="section level2">
+<h2>Program Variety</h2>
+<p>Questions answered:</p>
+<ol style="list-style-type: decimal">
+<li>Which Beachbody programs have I tried?</li>
+<li>Which program(s) do I keep coming back to?</li>
+</ol>
+<style type="text/css">
+.scroll-100 {
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: inherit;
+  font-size: 12px;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+}
+</style>
+<p><img src="/2022/09/12/r-analysis-of-beachbody-workout-and-smart-watch-data/index_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre class="scroll-100"><code>## 
+## 
+## |Program                      |Instructor      | workout_cnt| prop|
+## |:----------------------------|:---------------|-----------:|----:|
+## |9 Week Control Freak         |Autumn          |          69|   43|
+## |P90x3                        |Tony Horton     |          24|   15|
+## |Morning Meltdown 100         |Jericho         |          11|    7|
+## |22 Minute Hard Corps         |Tony Horton     |          10|    6|
+## |80 day obsession             |Autumn          |           6|    4|
+## |Barre Blend                  |Elise           |           6|    4|
+## |21 Day Fix Extreme Real Time |Autumn          |           4|    2|
+## |3 Week Yoga Retreat          |Vitas           |           4|    2|
+## |Tai Cheng                    |Dr. Mark Cheng  |           4|    2|
+## |21 Day Fix Real Time         |Autumn          |           3|    2|
+## |3-Day Yoga Refresh           |Ted             |           3|    2|
+## |Focus T25                    |Shaun T         |           3|    2|
+## |Yoga Studio                  |Ted             |           3|    2|
+## |3-Day Yoga Refresh           |Vitas           |           2|    1|
+## |Job 1                        |Jennifer Jacobs |           2|    1|
+## |Yoga Studio                  |Jericho         |           2|    1|
+## |#MBF                         |Megan Davies    |           1|    1|
+## |21 Day Fix Extreme           |Autumn          |           1|    1|
+## |3-Day Yoga Refresh           |Elise           |           1|    1|
+## |4 Weeks for Every Body       |Autumn          |           1|    1|
+## |Just Your Body Weight        |Carmel          |           1|    1|
+## |Xtend Barre                  |Andrea Rogers   |           1|    1|</code></pre>
+<p><font color="red" size=5>The past year has been dominated by the ‘9 Week Control Freak’ program by instructor Autumn Calabrese. That program has 45 total workouts (5 workouts per week x 3 phases x 3 weeks per phase). Since I’ve done 69 from that program, it shows that I completed it once and started doing it again.</font></p>
+<div id="calories-vs-heart-rate" class="section level3">
+<h3>Calories vs Heart Rate</h3>
+<p>Questions to answer:</p>
+<ol style="list-style-type: decimal">
+<li>What is the correlation of rate of calories burned versus the average heart rate during the workout?</li>
+<li>Quantify the calories burned per minute versus the average heart rate to associate the payoff to the effort.</li>
+</ol>
+<p><img src="/2022/09/12/r-analysis-of-beachbody-workout-and-smart-watch-data/index_files/figure-html/unnamed-chunk-13-1.png" width="672" /><img src="/2022/09/12/r-analysis-of-beachbody-workout-and-smart-watch-data/index_files/figure-html/unnamed-chunk-13-2.png" width="672" />
+This two-way plot shows a pretty strong correlation between average heart rate and calories burned per minute. This data supports a fairly basic intuition that higher effort (higher BPM) will result in more calories burned. But note that this calculation provides an actual number.</p>
+<p><font size=5 color="red">An extra 1.2 calories per minute can be burned by increasing heart rate by 10 bpm.</font></p>
+</div>
+<div id="does-avg.hr-differ-by-program" class="section level3">
+<h3>Does Avg.HR Differ by Program?</h3>
+<p>Run a one-way ANOVA to test for significance of Avg.HR by Program. Then a Tukey test will do a simultaneous comparison to group the programs by Avg.HR so that I can visualize which programs produce a similar level of effort.</p>
+<p><img src="/2022/09/12/r-analysis-of-beachbody-workout-and-smart-watch-data/index_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><font color="red" size=5>Programs which give me the highest average heart rate (and hence more calories burned per minute) are Focus T25, Morning Meltdown 100, P90x3, JYBW, Barre Blend and 9 Week Control Freak. Even though I only did 1 workout from the ‘4 Weeks for Every Body’ program, it’s clear that it’s not as efficient use of time as the other programs.</font></p>
+</div>
+</div>
+</div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+<p>I was proud of myself for being consistent with my workouts for the last 12 months, but somewhat surprised to see how few pounds worth of calories I had actually burned from the Beachbody workouts (only 6 pounds). However it was motivating to see data that supports the additional calories per minute I can burn if I up my effort and get my heart rate up for longer periods of time when I am working out. I also appreciated the data that supported my intuition about which programs are more effective than others for heart rate and effective calorie burning.</p>
+<p>The only disappointment I encountered through this process was the difficulty to extract the Beachbody data from the app and being limited by data beyond a year ago. I was really hoping to compare complete programs like Barre Blend and 80 Day Obsession which were completed over a year ago.</p>
+<p>The analysis enabled me to realize how technological feature advancement in smart watches could improve the quality of the data and insights. For example the ability to connect directly to online programs like BOD could enable users to easily associate calories and heart rate to specific programs and workouts. Additionally, I learned how to enable my smart watch to auto-start and auto-stop activities which I hope will improve my partial and missing calories and heart rate data. Before this analysis I didn’t realize the impact that my user-errors would have on the analytics.</p>
+<p>I look forward to the future of fitness watches and automated activity tracking capabilities, and I hope there will be more synergy with online workout programs to bring fitness tips and insights to users like myself.</p>
+</div>
+<div id="appendix" class="section level1">
+<h1>Appendix</h1>
+<div id="full-tukey-analysis" class="section level3">
+<h3>Full Tukey Analysis</h3>
+<pre><code>## $statistics
+##    MSerror Df     Mean       CV
+##   57.18118 82 134.3158 5.629885
+## 
+## $parameters
+##    test  name.t ntr StudentizedRange alpha
+##   Tukey Program  13         4.731866  0.06
+## 
+## $means
+##                                Avg.HR       std  r Min Max    Q25   Q50    Q75
+## 21 Day Fix Extreme Real Time 125.6667 18.339393  3 105 140 118.50 132.0 136.00
+## 21 Day Fix Real Time         129.3333  8.736895  3 122 139 124.50 127.0 133.00
+## 22 Minute Hard Corps         139.2857  7.341986  7 128 148 134.50 143.0 143.50
+## 4 Weeks for Every Body       104.0000        NA  1 104 104 104.00 104.0 104.00
+## 9 Week Control Freak         134.4286  6.955421 63 118 156 130.00 135.0 138.00
+## Barre Blend                  134.5000  6.862944  6 127 144 130.50 132.0 139.50
+## Focus T25                    143.3333  3.511885  3 140 147 141.50 143.0 145.00
+## Job 1                        125.5000 12.020815  2 117 134 121.25 125.5 129.75
+## Just Your Body Weight        140.0000        NA  1 140 140 140.00 140.0 140.00
+## Morning Meltdown 100         142.0000 11.313708  2 134 150 138.00 142.0 146.00
+## P90x3                        142.0000  2.828427  2 140 144 141.00 142.0 143.00
+## Tai Cheng                    127.0000        NA  1 127 127 127.00 127.0 127.00
+## Xtend Barre                  124.0000        NA  1 124 124 124.00 124.0 124.00
+## 
+## $comparison
+## NULL
+## 
+## $groups
+##                                Avg.HR groups
+## Focus T25                    143.3333      a
+## Morning Meltdown 100         142.0000      a
+## P90x3                        142.0000      a
+## Just Your Body Weight        140.0000      a
+## 22 Minute Hard Corps         139.2857      a
+## Barre Blend                  134.5000      a
+## 9 Week Control Freak         134.4286      a
+## 21 Day Fix Real Time         129.3333     ab
+## Tai Cheng                    127.0000     ab
+## 21 Day Fix Extreme Real Time 125.6667     ab
+## Job 1                        125.5000     ab
+## Xtend Barre                  124.0000     ab
+## 4 Weeks for Every Body       104.0000      b
+## 
+## attr(,&quot;class&quot;)
+## [1] &quot;group&quot;</code></pre>
+</div>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+
