@@ -1,8 +1,9 @@
 {{ partial "header.html" . }}
 
 <main class="content" role="main">
-  
-  Please click a title link or filter to related content using the category and tag links:
+  <font size=3>
+  Please click a title link or filter to related content using the [category] tag links:
+  </font>
   </br></br>
 
   {{ if .Content }}
@@ -20,12 +21,13 @@
     {{ if .IsHome }}
     {{ $pages = .Site.RegularPages }}
     {{ end }}
+    
     {{ range (where $pages "Section" "!=" "").GroupByDate "2006" }}
     
-
     <!--<h2 class="archive-title">{{ .Key }}</h2>-->
     
     {{ range .Pages }}
+    
     {{partial "categories" . }} 
     {{ partial "tags" . }}
     <article class="archive-item">
@@ -34,7 +36,7 @@
         {{ .Date.Format "2006-01-02" }}
       </span>
     </article>
-    
+
     {{ end }}
     {{ end }}
   </div>
