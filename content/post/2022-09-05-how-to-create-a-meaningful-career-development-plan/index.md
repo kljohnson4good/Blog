@@ -5,7 +5,7 @@ date: '2022-09-05'
 slug: how-to-create-a-meaningful-career-development-plan
 categories:
   - Career
-tags: [career]
+tags: [development plan]
 description: "Procedure to creating a meaningful career development plan"
 ---
 

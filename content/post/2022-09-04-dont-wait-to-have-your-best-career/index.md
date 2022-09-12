@@ -5,7 +5,7 @@ date: '2022-09-04'
 slug: dont-wait-to-have-your-best-career
 categories:
   - Career
-tags: [career]
+tags: [development plan]
 description: "Advice to kick-starting your best career"
 ---
 

@@ -4,10 +4,9 @@ author: Kristi Johnson
 date: '2022-09-06'
 slug: r-shiny-app-correlation-coefficient
 categories:
-  - ShinyApp
   - R
 tags:
-  - R
+  - ShinyApp
 description: R ShinyApp GUI to sort correlation coefficient of parameters used during exploratory data analysis process
 runtime: shiny
 output: html_document
@@ -17,9 +16,9 @@ output: html_document
 
 <div id="section-background" class="section level1">
 <h1>Background</h1>
-<p>This post was created from a 2021 Pennsylvania State University (PSU) Stat 485 class project as a way for students to learn R and associated RStudio IDE. I’ve copied the code as I created it during the class and re-hosted the app in a new location given that I am no longer a student.</p>
-<p>This tutorial will review the source code which generates the Shiny App as demonstrated below. This simply app provides a user interface for the user to provide a .csv dataset and the output will sort the R-squared correlation coefficient values so that the user can focus attention on the highly correlating values as a means for dimension reduction of “wide” datasets.</p>
-<p><strong>WARNING: the app may not work if it has hit the monthly usage limit. Try again later if that is the case.</strong></p>
+<p>This post was created using my 2021 Pennsylvania State University (PSU) Stat 485 class project as a way for me as a student to learn R programming language and associated RStudio IDE. I’ve copied the code as I created it during the class and re-hosted the app in a new location given that I am no longer a student.</p>
+<p>This tutorial will review the source code which generates the Shiny App as demonstrated below. This simple app provides a user interface to upload a .csv dataset file. The program will calculate R-squared correlation coefficient values and output sorted values to help the user focus attention on the highly correlating values as a means for dimension reduction of “wide” datasets.</p>
+<p><strong>WARNING: the app may not work if it has hit the monthly usage limit. Try again later if that occurs.</strong></p>
 <iframe height="800" width="100%" frameborder="no" src="https://kljohnson.shinyapps.io/stat485_project-shiny/">
 </iframe>
 <p>hosted at <a href="https://shinyapps.io" class="uri">https://shinyapps.io</a></p>
@@ -50,7 +49,7 @@ Fig.1 - ui.R source code
 <ol style="list-style-type: decimal">
 <li>user selects their dataset (built-in mtcars or user-defined .csv to upload) with “DataSrc”</li>
 <li>numerical input box for the user to specify the desired R-squared lower limit (“Rsq”)</li>
-<li>“action” button. Once clicked, the analysis will filter based on the user’s input</li>
+<li>“xy plot” button. Once clicked, the analysis will filter based on the user’s input</li>
 </ol></li>
 <li>A hidden row which is only required if user selects to upload a.csv file.
 <ol style="list-style-type: lower-alpha">
@@ -108,7 +107,7 @@ Upon selecting the dataset, the R-code will perform data cleansing like removing
 <p align="center">
 <img src="resources/fig6.png" alt="drawing" width="800"/>
 <figcaption align="center">
-Fig.6 - reactive source code for the “action” button
+Fig.6 - reactive source code for the “xy plot” button
 </figcaption>
 </p>
 </figure>
@@ -128,7 +127,7 @@ Fig.7 - UI Performing the Analysis
 <li>“cor” is the correlation coefficient (signed value)</li>
 <li>“p” is the p-value for the significance of the correlation</li>
 <li>“Rsq” is the R-squared value (unsigned, and default to sorted in descending order</li>
-<li>“Action” is a button that the user can click to view the xy plot for that pair of variables</li>
+<li>“xy plot” is a button that the user can click to view the xy plot for that pair of variables</li>
 </ul>
 <figure>
 <p align="center">
@@ -139,7 +138,7 @@ Fig.8 - Second output after clicking “Perform Analysis” button
 </p>
 </figure>
 <p>I grew to appreciate the Shiny table’s “Search” feature, which allowed me to retain a rather large list of results by lowering the Rsq limit to say 0.75, and then search for a specific parameter name as shown below. I think this is a useful feature when interacting with domain experts who may want to explore specific parameters.</p>
-<p>After clicking any of the “Action” button for a given row ,the xy plot will be displayed below. The code adds the Rsq to the main title based on the value from the selected row.</p>
+<p>After clicking any of the “xy plot” button for a given row ,the xy plot will be displayed below. The code adds the Rsq to the main title based on the value from the selected row.</p>
 <figure>
 <p align="center">
 <img src="resources/fig9.png" alt="drawing" width="800"/>
@@ -155,12 +154,15 @@ Fig.9 - Third output after clicking “xy plot” button
 </div>
 <div id="section-conclusion" class="section level3">
 <h3>Conclusion</h3>
-<p>Getting up and running with Shiny was surprisingly easy. Even though I bhave many years of experience in software programming, I have had only limited exposure to GUI programming, and no experience with web apps, and much of the semantics were new to me. Nonetheless, within several hours and using the built-in “mtcars” dataset I had a basic implementation of this application which I was happy with. After that, I simply switched the dataset for the .csv file of my choosing and added some logic for data cleansing.</p>
+<p>Getting up and running with Shiny was surprisingly easy. Even though I have many years of experience in software programming, I have had only limited exposure to GUI programming, and no experience with web apps, and much of the semantics were new to me. Nonetheless, within several hours and using the built-in “mtcars” dataset I had a basic implementation of this application which I was happy with. After that, I simply switched the dataset for the .csv file of my choosing and added some logic for data cleansing.</p>
 <p>Overall I was pleased with the interactivity and functionality that can be created in R by using just a few features (i.e. plot, text, button, and data table components). I was happily surprised by the features that came with Shiny’s data table (DT library). The search and ordering features were a pleasant surprise and provided a usability feature beyond that from what I got from my original JMP based implementation. With this feature, the value added by allowing the user to provide an R-squared limit for filtering in the first place was diminished. However I retained this feature for demonstration purposes anyway.</p>
 <p>Of course there are many more complex capabilities that Shiny provides, but it is not necessary to go to the extremes in order to develop a useful application in a short amount of time. I found this a fairly low barrier to entry for both me as the programmer as well as the end-user. This is in contrast to and end-user needing to install and interact with a desktop application like JMP which requires another license and specific training on that application.</p>
 <p>I was also pleasantly surprised about how easy it was to deploy to Shiny.io’s server. With a few clicks I had my web app available online! This is in contrast to the hours I spent reading up on how to create my own server which seemed to be quite more complex of a task to host my own apps. However there are obvious limitations and the associated costs can grow as your use-case scope and complexity increases.</p>
-<p>In closing, creating web apps with Shiny is a great way to provide end-users with a way to access and interact with their data without requiring them to install special software, or know how to code. After this experience I am going to continue expanding on this project at work for connecting the data source to an SQL database, as well as investigate other options for hosting on our own servers for security and privacy reasons, as using the shiny.io platform would not be sufficient for an enterprise system. After these pieces are in place, then the options are going to be nearly endless! I am really excited at the possibility of unlocking the power of our existing data to the many users who are currently limited by the availability and expertise of programming and analysis tools.</p>
-<p>Full source code can be found at <a href="https://github.com/kljohnson4good/R-code/tree/main/Shiny-corr-coeff">https://github.com/kljohnson4good/R-code/tree/main/Shiny-corr-coeff</a></p>
+<p>In closing, creating web apps with Shiny is a great way to provide end-users with a way to access and interact with their data without requiring them to install special software, or know how to code. I am really excited at the possibility of unlocking the power of data to the many users who are currently limited by the availability and expertise of programming and analysis tools.</p>
+</div>
+<div id="section-appendix" class="section level3">
+<h3>Appendix</h3>
+<p>Source code can be found at <a href="https://github.com/kljohnson4good/R-code/tree/main/Shiny-corr-coeff">https://github.com/kljohnson4good/R-code/tree/main/Shiny-corr-coeff</a></p>
 </div>
 <div id="section-references" class="section level3">
 <h3>References</h3>

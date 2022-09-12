@@ -1,0 +1,5 @@
+<!-- <font size=3 color="DarkSalmon">tags:</font>-->
+
+{{ range .Params.tags }}
+<font size=4><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}"><kbd class="item-tag">{{ . }}</kbd></a></font>
+{{ end }}
