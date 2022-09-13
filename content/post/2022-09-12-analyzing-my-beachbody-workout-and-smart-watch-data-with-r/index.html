@@ -30,21 +30,22 @@ What I Learned From My Beachbody Workouts and Fitness Watch Data
     </style>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>I was looking for an analysis hobby project to dust off my R programming skills after over two years since completing my Master’s program. Thinking back on the data I’m accumulating in my life, I started wondering what my Beachbody online workout data would tell me.</p>
+<p>I was looking for an analysis hobby project to dust off my R programming and data analysis skills after over two years since completing my Master’s program. Thinking about the data I accumulate in my everyday life, I started wondering what my Beachbody online workout data would tell me.</p>
 <p>I began using Beachbody products in 2013 when my husband bought the DVD version of original <strong>P90x</strong> program with instructor <strong>Tony Horton</strong>, which we completed together to prepare for a Mui Thai Kickboxing class. After that awesome experience, some years later we purchased the <strong>P90x3</strong> DVD which reduced its workout lengths from ~45-60 minutes to a more palatable 30 minutes, which we could commit too with full time engineering jobs. I was pretty happy with the effectiveness of these workouts and continued to use them intermittently for the next several years.</p>
-<p>It wasn’t until 2019 when a friend introduced me to Beachbody On-Demand (<strong>BOD</strong>) that I began to consider branching out my workout experiences. Then when 2020 hit with COVID-19 and work-from-home, I pulled the trigger and bought the annual subscription, which at $99/yr is quite reasonable compared to a gym membership. After all, what kind of a price can you put on good health (mental and physical).</p>
-<p>The second addition to my digital workout arsenal came in the form of a <strong>Garmin Vivoactive 4S</strong> fitness watch. I am usually a tech trend lagger so it was my husband who bought this for me in Christmas 2020. I started tracking my walking, cycling and workouts so I could get a sense of my distance/steps, heart rate and expended calories during my workouts.</p>
-<p>I’ve been fairly diligent with the workouts since I schedule time on my work calendar to do them every day, but I was terrible at keeping track and didn’t record the workouts as I probably should have been. Now, almost 3 years later, I started wondering what my workout history could tell me.</p>
+<p>It wasn’t until 2019 when a friend introduced me to Beachbody On-Demand (<strong>BOD</strong>) that I began to consider branching out my workout experiences. Then when 2020 hit with COVID-19 and work-from-home, I pulled the trigger and bought the annual subscription, which at $99/yr is quite reasonable compared to a gym membership. After all, what kind of a price can you put on good health (mental and physical)?</p>
+<p>The second addition to my digital workout arsenal came in the form of a <strong>Garmin Vivoactive 4S</strong> fitness watch. I am usually a tech trend lagger so it was my husband who bought this for me in Christmas 2020. I started tracking my walking, cycling and Beachbody workouts so I could get a sense of my distance/steps, heart rate and expended calories.</p>
+<p>I’ve been fairly diligent with the workouts since I schedule time on my work calendar to do them every day, but I was terrible at keeping track and didn’t record the workouts or synch any data between my watch and the app. Now, almost 3 years later, I started wondering what my workout history data could tell me.</p>
 <div id="data-sources-and-column-descriptions" class="section level2">
 <h2>Data Sources and Column Descriptions</h2>
 <p><strong>Beachbody On-Demand (BOD)</strong>:</p>
 <p>BOD does keep a workout history but with several major downsides:</p>
 <ol style="list-style-type: decimal">
-<li>The data is not extractable into a worksheet. To collect my data I had to login into my account, find the history and click each day to manually record the available information.</li>
+<li>The data is not extractable into a worksheet. To collect my data I had to login into my account, find the history and click each day to manually record the available information, which took about an hour.</li>
 <li>Some data had to be filled in manually. For example the instructor information is not within the history, but something I had to pull from the workout description itself. I also wanted to know when I started and finished a program, which meant that I had to manually code the day number of the program myself. Lastly I wanted insights into the activity type, so I manually coded the exercise as Yoga, Cardio, Meditation, or Abs.</li>
-<li>The history only includes the past year’s worth of data. This means that some programs are not able to be adequately represented due to missing data.</li>
-<li>This manual encoding only has date information and no time-stamp to align the Garmin activity.</li>
+<li>The history only includes the past year’s worth of data. This means that some programs and trends are not able to be adequately represented due to missing data.</li>
+<li>This manual encoding only has date information and no time-stamp to align the Garmin activity. This created a few problems when I had done more than one workout in the same day but did not have corresponding watch data for both of them.</li>
 </ol>
+<p>Key attributes of the BOD data are:</p>
 <table>
 <thead>
 <tr class="header">
@@ -77,6 +78,7 @@ What I Learned From My Beachbody Workouts and Fitness Watch Data
 </table>
 <p><strong>Garmin Watch</strong>:</p>
 <p>My watch keeps track of calories, time, max and avg heart rate information. It also tracks other things but these are the ones I’m interested in for this initial analysis. Garmin keeps track of workout history and the Connect App conveniently has an extract-to-.csv format feature I ran on my computer. However the downside was that the watch only saved my workout history for the last 10 months because I had not been syncing my watch to my phone app on a regular basis. Lesson learned that I need to be doing this more frequently.</p>
+<p>Key attributes of the Garmin watch data are:</p>
 <table>
 <thead>
 <tr class="header">
@@ -114,8 +116,8 @@ What I Learned From My Beachbody Workouts and Fitness Watch Data
 <p>*Date is a key column used to merge/combine the two datasets. Note that time is removed from the watch data so alignment is on day only.</p>
 <p>The combined dataset between BOD and Garmin will filter to only Activity Type of ‘Cardio’, which is what I use when setting up activity tracking on my watch. I don’t usually turn on tracking for yoga or abs workout types so that data is not available to correlate.</p>
 </div>
-<div id="data-integrity-issues" class="section level2">
-<h2>Data Integrity Issues</h2>
+<div id="data-quality" class="section level2">
+<h2>Data Quality</h2>
 <p>Deriving an accurate dataset involved quite a few manual steps and fixing various issues.</p>
 <p><strong>User Error</strong>:</p>
 <ul>
@@ -127,6 +129,8 @@ What I Learned From My Beachbody Workouts and Fitness Watch Data
 <p>These issues will result in missing data and potentially erroneous data. Therefore, any conclusions will have to keep that in mind and may require an iterative process of the user (me) to review the results and correct as I discover them.</p>
 <p><strong>Multiple workouts in one day</strong>:</p>
 <p>The datasets are joined by date, without the datetime stamp. Therefore invalid data may be the result of combining datasets with one or more entry per day in either BOD or Garmin. In those cases, joining datasets may not know how to align due to lack of timestamp to assist in aligning them. These could be cleaned manually by making some intuitive inferences.</p>
+<p><strong>Vacation and Sick time</strong>:</p>
+<p>There are some weeks with zero workouts, which I assume are due to sick or vacation. For weeks with low number of workouts it could be due to coming off of vacation or sick time, so the average number of workouts per week could be slightly skewed to the low side.</p>
 </div>
 <div id="software-prerequisites" class="section level2">
 <h2>Software Prerequisites</h2>
@@ -205,7 +209,7 @@ From 11/24/2021 to 09/09/2022:
 <p>Compare BOD time to watch time to understand how aligned the recorded calorie and HR data from the watch are to the completed workout. Values not within about 10 minutes of each other indicate an integrity issue.</p>
 <p>To work around that problem, the analysis will calculate calories-per-minute using the watch time only, so that it is a relative number. Note then that <font color="red">the total calories reported by the watch is less than the true value of calories burned during the BOD workouts</font>.</p>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>This graph shows 5 Garmin workout times below 10 minutes when the video time is greater than 20 minutes. This depicts the user issues discussed previously.</p>
+<p>This graph shows 5 workouts recorded by the watch with times below 10 minutes, likely a result of user error previously mentioned.</p>
 </div>
 <div id="beachbody-activity-types" class="section level2">
 <h2>Beachbody Activity Types</h2>
@@ -215,28 +219,6 @@ From 11/24/2021 to 09/09/2022:
 </div>
 <div id="beachbody-instructors" class="section level2">
 <h2>Beachbody Instructors</h2>
-<!--
-
-```
-## # A tibble: 12 × 3
-##    Instructor      workout_cnt workout_pct
-##    <chr>                 <int>       <dbl>
-##  1 Autumn                   84          52
-##  2 Tony Horton              34          21
-##  3 Jericho                  13           8
-##  4 Elise                     7           4
-##  5 Ted                       6           4
-##  6 Vitas                     6           4
-##  7 Dr. Mark Cheng            4           2
-##  8 Shaun T                   3           2
-##  9 Jennifer Jacobs           2           1
-## 10 Andrea Rogers             1           1
-## 11 Carmel                    1           1
-## 12 Megan Davies              1           1
-```
-
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
--->
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p><font size=5 color="red">Autumn is clearly my favorite instructor. I’ve done 84 of her workouts (&gt;50% of the total workouts), while Tony Horton comes in second at 34 workouts(&gt;20% of the total workouts). However clearly Tony has been my go-to yoga instructor!</font></p>
 </div>
@@ -311,19 +293,72 @@ This two-way plot shows a pretty strong correlation between average heart rate a
 <h3>Does Avg.HR Differ by Program?</h3>
 <p>Run a one-way ANOVA to test for significance of Avg.HR by Program. Then a Tukey test will do a simultaneous comparison to group the programs by Avg.HR so that I can visualize which programs produce a similar level of effort.</p>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<p><font color="red" size=5>Programs which give me the highest average heart rate (and hence more calories burned per minute) are Focus T25, Morning Meltdown 100, P90x3, JYBW, Barre Blend and 9 Week Control Freak. Even though I only did 1 workout from the ‘4 Weeks for Every Body’ program, it’s clear that it’s not as efficient use of time as the other programs.</font></p>
+<p><font color="red" size=5>Programs which give me the highest average heart rate (and hence more calories burned per minute) are Focus T25, Morning Meltdown 100, P90x3, JYBW, Barre Blend and 9 Week Control Freak. I only tried one workout from ‘4 Weeks for Every Body’ program so far, but it’s seems to take much less effort than the other programs</font></p>
+</div>
+<div id="which-workouts-get-my-heart-rate-the-highest" class="section level3">
+<h3>Which workouts get my heart rate the highest?</h3>
+<p>The table below shows the workout description in order of the maximum Avg.HR I was able to achieve. (I used max instead of mean to avoid skew which could appear in results due to workouts I had done fewer times than others).</p>
+<p>For the most efficient calorie burn, I should return to 9 Week Control Freak’s Tabata Cardio workout. I also know I enjoy a good low-impact workout to take it easier on my aging joints, so this table shows that Barre Blend’s Cardio Blend is not far down the list.</p>
+<pre class="scroll-100"><code>## 
+## 
+## |Program                      |Description             | avg_hr|
+## |:----------------------------|:-----------------------|------:|
+## |9 Week Control Freak         |Tabata Cardio           |    156|
+## |Morning Meltdown 100         |LIT Cardio              |    150|
+## |22 Minute Hard Corps         |Cardio 1                |    148|
+## |Focus T25                    |Cardio                  |    147|
+## |9 Week Control Freak         |Back &amp; Legs             |    144|
+## |9 Week Control Freak         |Biceps &amp; Triceps        |    144|
+## |Barre Blend                  |Cardio Blend            |    144|
+## |P90x3                        |Triometrics             |    144|
+## |22 Minute Hard Corps         |Resistance 1            |    143|
+## |22 Minute Hard Corps         |Resistance 2            |    143|
+## |9 Week Control Freak         |Shoulders               |    143|
+## |9 Week Control Freak         |Shoulders &amp; Biceps      |    143|
+## |Focus T25                    |Speed 1.0               |    143|
+## |Barre Blend                  |Barre                   |    142|
+## |21 Day Fix Extreme Real Time |Plyo Fix Extreme        |    140|
+## |9 Week Control Freak         |Back &amp; Bicepts          |    140|
+## |Focus T25                    |Total Body Circuit      |    140|
+## |Just Your Body Weight        |Ladder Cardio 1         |    140|
+## |21 Day Fix Real Time         |Total Body Cardio Fix   |    139|
+## |22 Minute Hard Corps         |Cardio 3                |    138|
+## |9 Week Control Freak         |Chest &amp; Triceps         |    138|
+## |9 Week Control Freak         |Chest &amp; Tricepts        |    138|
+## |9 Week Control Freak         |Back &amp; Biceps           |    137|
+## |9 Week Control Freak         |Back &amp; Chest            |    137|
+## |9 Week Control Freak         |Total Body Tone         |    136|
+## |Job 1                        |Sample Workout          |    134|
+## |Morning Meltdown 100         |Total Body Badass       |    134|
+## |21 Day Fix Extreme Real Time |Upper Fix Extreme       |    132|
+## |Barre Blend                  |Classic Full Body Blend |    132|
+## |22 Minute Hard Corps         |Battle Buddy            |    131|
+## |22 Minute Hard Corps         |Resistance 3            |    128|
+## |21 Day Fix Real Time         |Lower Fix               |    127|
+## |Tai Cheng                    |Ward Off                |    127|
+## |Xtend Barre                  |Barre                   |    124|
+## |21 Day Fix Real Time         |Upper Fix               |    122|
+## |Job 1                        |Back, Glutes, Core      |    117|
+## |21 Day Fix Extreme Real Time |Pilates                 |    105|
+## |4 Weeks for Every Body       |PULL                    |    104|</code></pre>
 </div>
 </div>
 </div>
-<div id="conclusion" class="section level1">
-<h1>Conclusion</h1>
-<p>I was proud of myself for being consistent with my workouts for the last 12 months, but somewhat surprised to see how few pounds worth of calories I had actually burned from the Beachbody workouts (only 6 pounds). However it was motivating to see data that supports the additional calories per minute I can burn if I up my effort and get my heart rate up for longer periods of time when I am working out. I also appreciated the data that supported my intuition about which programs are more effective than others for heart rate and effective calorie burning.</p>
+<div id="conclusion-what-did-i-learn-and-how-will-i-behave-differently" class="section level1">
+<h1>Conclusion: What Did I Learn and How Will I Behave Differently?</h1>
+<p>This analysis exposed what a lazy fitness tracker user I am. Even though apps like BOD have a tracking mechanism, I don’t follow through with logging because it involves additional app button clicks that tend to annoy me. I will make an effort to do better along with hoping that the technology improves. I will also take the time to synch my Garmin watch data to the app more often to avoid losing the history.</p>
+<p>I was proud of myself to see the consistency of workouts for the last 12 months, but somewhat surprised to see how few pounds worth of calories I had actually burned from the Beachbody workouts (only 6 pounds). However it was motivating to see data that supports the additional calories per minute I can burn if I up my effort and get my heart rate up for longer periods of time. I also appreciated the data that supported my intuition about which programs are more effective than others for heart rate and effective calorie burning. Now that I’ve seen the data, I’ll definitely be sprinkling the 9 Week Control Freak Tabata Cardio more often into my routine.</p>
 <p>The only disappointment I encountered through this process was the difficulty to extract the Beachbody data from the app and being limited by data beyond a year ago. I was really hoping to compare complete programs like Barre Blend and 80 Day Obsession which were completed over a year ago.</p>
-<p>The analysis enabled me to realize how technological feature advancement in smart watches could improve the quality of the data and insights. For example the ability to connect directly to online programs like BOD could enable users to easily associate calories and heart rate to specific programs and workouts. Additionally, I learned how to enable my smart watch to auto-start and auto-stop activities which I hope will improve my partial and missing calories and heart rate data. Before this analysis I didn’t realize the impact that my user-errors would have on the analytics.</p>
+<p>The analysis enabled me to realize how technological feature advancement in smart watches could improve the quality of the data and open doors for more insights. For example the ability to connect directly to online programs like BOD could enable users to easily associate calories and heart rate to specific programs and workouts. This could be coupled with automated social posts when users hit achievements like total calories burned or beat personal records for max avg heart rate.</p>
+<p>From this analysis I’m glad I learned how to enable my smart watch to auto-start and auto-stop activities which I hope will improve my partial and missing calories and heart rate data. Before this analysis I didn’t realize the impact that my user-errors would have on the analytics.</p>
 <p>I look forward to the future of fitness watches and automated activity tracking capabilities, and I hope there will be more synergy with online workout programs to bring fitness tips and insights to users like myself.</p>
 </div>
 <div id="appendix" class="section level1">
 <h1>Appendix</h1>
+<ul>
+<li>Link to source code: <a href="https://github.com/kljohnson4good/Blog/blob/main/content/post/2022-09-12-analyzing-my-beachbody-workout-and-smart-watch-data-with-r/index.Rmd">index.RMD</a></li>
+<li>.csv data files can be found <a href="https://github.com/kljohnson4good/R-code/tree/main/R-analysis-of-beachbody-workout-and-smart-watch-data">here</a></li>
+</ul>
 <div id="full-tukey-analysis" class="section level3">
 <h3>Full Tukey Analysis</h3>
 <pre><code>## $statistics
