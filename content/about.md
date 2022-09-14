@@ -15,6 +15,7 @@ Kristi Johnson
 </font>
 <br/>
 Data Scientist, Programmer, Engineer, Manager, Mentor, Dog Mom
+<br/>
 Born/Live: California, USA
 <br/>
 <br/>
@@ -31,7 +32,7 @@ Another driving influence came from a lesson I learned from my two Boy Scout cou
 
 My passion for **teamwork and coaching** came from being lucky enough to have had generous, talented and caring coaches in my athletic endeavers.  In turn they have instilled in me a desire to pay that forward as a coach or mentor to others.  During my time as a competitive athlete, I also struggled with the **mental health** side of the game, and understand how critical that part is to performing and achieving success.  I've carried those lessons with me and aspire to lead a balanced life, working hard to (metaphorically) climb mountains, but also taking time to experience joy, restore energy levels and overall not take everything too seriously. 
 
-I am a hard core **introvert** and my #1 strengh according to my [strength assessment](https://www.viacharacter.org/) is **Humility**.  As an athlete I had to nearly be drug onto an awards podium and I hated pictures (good thing nobody had cell phones in those days!).  Even holding eye contact with other people can feel uncomfortable.  Growing up, these traits can feel like weaknesses, but over time I am learning how to turn them into strengths.  For example, I don't pretend to have all the answers, and I love learning and sharing the stage with others and seeing them rise above their own limiting beliefs.
+I am a hard core **introvert** and my #1 strengh according to my [strength assessment](https://www.viacharacter.org/) is **Humility**.  As an athlete I pretty much had to be dragged onto an awards podium and I hated pictures (good thing nobody had cell phones in those days!).  Even holding eye contact with other people can feel uncomfortable.  Growing up, these traits can feel like weaknesses, but over time I am learning how to turn them into strengths.  For example, I don't pretend to have all the answers, and I love learning and sharing the stage with others and seeing them rise above their own limiting beliefs.
 
 Because of those traits, I never planned on becoming a manager. But when the opportunity presented itself in 2019, I leaned into the culmination of my experiences to say yes.  It was challenging but I poured my attention and focus into learning as much as possible. This cultivated a passion for helping others with **career development**, with a mission to create a rewarding and fulfilling work experience that is balanced with life's demands.
 
@@ -91,7 +92,7 @@ Just for fun, here are my college bests:
 |100m Hurdles      | 15.9s       |
 |800m              | let's not talk about that :-/ |
 
-(*) National championship All-American and still holds the record at Chico State University (as of 2022).  This achievement landed me in [Chico's **Atehletic Hall-Of-Fame** 2018](https://chicowildcats.com/sports/2019/1/3/chico-state-hall-of-fame-class-of-2018.aspx), and inducted into my junio college [Diablo Valley College's Athletic Hall of Fame](https://diablovalley.prestosports.com/HOF/HOF_2020) in 2020.  
+(*) National championship All-American and still holds the record at Chico State University (as of 2022).  This achievement landed me in [Chico's **Atehletic Hall-Of-Fame** 2018](https://chicowildcats.com/sports/2019/1/3/chico-state-hall-of-fame-class-of-2018.aspx), and inducted into my junior college [Diablo Valley College Athletic Hall of Fame](https://diablovalley.prestosports.com/HOF/HOF_2020) in 2020.  
 
 </span> 
 
@@ -101,18 +102,24 @@ Just for fun, here are my college bests:
 
 ### Hobbies
 
-**Travel**: Just returned from Scotland (August 2022) to experience the Fringe Festival, whisky of the Highlands, and driving on the left.
+**Travel**: Scotland (Aug'22) to experience the Fringe Festival, whisky of the Highlands, and driving on the left.
 
 **Road Cycling**:
 Pinnacle was in 2017 where I road 72 miles at 6500 ft of elevation around South Lake Tahoe, CA.  These days I do the occasional casual 14-20 mile ride around town.
 
 **Mountain Biking**: First full suspension, Specialized StumpJumper purchased in 2019.  Experienced Ben Nevis downhill while in Scotland!
 
-**Wellness**: [Beachbody On-Demand](https://www.beachbodyondemand.com/) daily workout, yoga and meditation routines (well, almost daily, ha!)
+**Wellness**: [Beachbody On-Demand](https://www.beachbodyondemand.com/) daily workout, yoga and meditation routines (well, almost daily, ha!).  Walking my dog (twice daily!).
+
+**Martial Arts**: Black belt in Mui Thai kickboxing and self defense.
 
 **Reading**: nonstop
 
 **Movies**: comedy, action (never horror)
+
+**Podcasts**: Brene Brown on Spotify
+
+**Music**: From country (Dolly Parton) to hard rock (A7X), I have a wide variety of favorites, and seen them in concert too.
 
 **Blog**: This is it, you're already here! :-)
 
