@@ -65,8 +65,8 @@ A simple code template to split a longer blog into multiple pages was obatined f
       <pubDate>Thu, 01 Sep 2022 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
-      <description>Credits This site was inspired by the ASA Committee on Career Development Portfolio Project written in Amstat news June 2022. Source code and method follows the fantastic tutorial bookdown by Yihui Xie, Amber Thomas, Alison Presmanes Hill (2022-08-08). Icon sources:
-Logo Home from freepnglogos.com 512x512 Logo from freepnglogos.com Linkedin Logo from freepnglogos.com How this site is created This site is built using R language blogdown package and hosted from Netlify connected to my github source code.</description>
+      <description>About Me Kristi JohnsonData Scientist, Programmer, Engineer, Manager, Mentor, Dog MomBorn/Live: California, USAI have have been an engineer for over 20 years, starting with my first internship in 1997 during college where I learned to love software automation, drawing histograms and applying visualizations, math and statistics to manufacturing and test challenges.
+After graduating with a B.S in Computer Engineering, my professional roles required software development and hardware debug to deliver a product, but I continued to be drawn to using data and visualizations to excel at debug and problem solving.</description>
     </item>
     
   </channel>

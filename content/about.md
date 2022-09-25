@@ -28,35 +28,12 @@ I consider myself to be multi-faceted in most aspects of my life, hardly settlin
 
 Applied to my career, my multi-dimensional interests have enabled me to go deep as a software developer, as well as exercise leadership by achieving big goals through the coordination of team efforts.  My wide focus helps me to see interdependencies and bring cross-functional teams together synergystically to solve problems.
 
-Another driving influence came from a lesson I learned from my two Boy Scout cousins that I grew up with (both eventually earning Eagle Scout).  Always, always **leave things in a better state than when I arrived**.  That lesson became deeply embedded into my values and part of my work ethic.  No matter what role I'm playing or task I'm working on, I strive to automate, document or some how improve it before I move on.  This applies to myself as well.  I continue to keep my mind open and work on being a better version of myself with each passing year.
-
-My passion for **teamwork and coaching** came from being lucky enough to have had generous, talented and caring coaches in my athletic endeavers.  In turn they have instilled in me a desire to pay that forward as a coach or mentor to others.  During my time as a competitive athlete, I also struggled with the **mental health** side of the game, and understand how critical that part is to performing and achieving success.  I've carried those lessons with me and aspire to lead a balanced life, working hard to (metaphorically) climb mountains, but also taking time to experience joy, restore energy levels and overall not take everything too seriously. 
-
 I am a hard core **introvert** and my #1 strengh according to my [strength assessment](https://www.viacharacter.org/) is **Humility**.  As an athlete I pretty much had to be dragged onto an awards podium and I hated pictures (good thing nobody had cell phones in those days!).  Even holding eye contact with other people can feel uncomfortable.  Growing up, these traits can feel like weaknesses, but over time I am learning how to turn them into strengths.  For example, I don't pretend to have all the answers, and I love learning and sharing the stage with others and seeing them rise above their own limiting beliefs.
-
-Because of those traits, I never planned on becoming a manager. But when the opportunity presented itself in 2019, I leaned into the culmination of my experiences to say yes.  It was challenging but I poured my attention and focus into learning as much as possible. This cultivated a passion for helping others with **career development**, with a mission to create a rewarding and fulfilling work experience that is balanced with life's demands.
 
 </span> 
 
 <!--- end about1 --->
-<!--- ############################################### --->
 
-<span class="about1-1" style="display:none">
-
-### Terrifying but Worthy Experiences
-
-As an introvert, starting these experiences were terrifying.  However looking back I couldn't be more thankful because I am a better person for doing them.  I'm a big believer in building courage through confrontation of fear.
-
-1. **[Toastmasters](https://www.toastmasters.org/)** (any public speaking)
-2. Leading **Volunteer** events (thanks Folsom Excellence & United Way!)
-3. **Martial Arts** (sparring, black belt test and teaching)
-4. Becoming a **manager** for the first time
-5. Going back-to-school as a 38-year-old **student**
-6. Sky diving, scuba diving, waterfall repelling (ascentionism), ...
-
-</span> 
-
-<!--- end page1-1 --->
 <!--- ############################################### --->
 
 <span class="about1-2" style="display:none">
@@ -102,14 +79,14 @@ Just for fun, here are my college bests:
 
 ### Hobbies
 
-**Travel**: Scotland (Aug'22) to experience the Fringe Festival, whisky of the Highlands, and driving on the left.
+**Travel**:
 
 **Road Cycling**:
-Pinnacle was in 2017 where I road 72 miles at 6500 ft of elevation around South Lake Tahoe, CA.  These days I do the occasional casual 14-20 mile ride around town.
+Riding 72 miles at 6500 ft of elevation around South Lake Tahoe, CA.  
 
-**Mountain Biking**: First full suspension, Specialized StumpJumper purchased in 2019.  Experienced Ben Nevis downhill while in Scotland!
+**Mountain Biking**: Specialized full suspension StumpJumper
 
-**Wellness**: [Beachbody On-Demand](https://www.beachbodyondemand.com/) daily workout, yoga and meditation routines (well, almost daily, ha!).  Walking my dog (twice daily!).
+**Wellness**: [Beachbody On-Demand](https://www.beachbodyondemand.com/), Walking my dog.
 
 **Martial Arts**: Black belt in Mui Thai kickboxing and self defense.
 
@@ -119,7 +96,7 @@ Pinnacle was in 2017 where I road 72 miles at 6500 ft of elevation around South 
 
 **Podcasts**: Brene Brown on Spotify
 
-**Music**: From country (Dolly Parton) to hard rock (A7X), I have a wide variety of favorites, and seen them in concert too.
+**Music**: From country (Dolly Parton) to hard rock (A7X), and seen them in concert too.
 
 **Blog**: This is it, you're already here! :-)
 
@@ -131,8 +108,6 @@ Pinnacle was in 2017 where I road 72 miles at 6500 ft of elevation around South 
 
 ----------------------------------------------------------------------
 
-* <a href="#" class="page1-1">Terrifying but Worthy Experiences</a>
-* <a href="#" class="page1-2">Most Memorable Career Moments</a>
 * <a href="#" class="page1-3">Track and Field Records</a>
 * <a href="#" class="page1-4">Hobbies</a>
 
@@ -186,7 +161,6 @@ This site is built using R language blogdown package and hosted from Netlify con
 jQuery(document).ready(function(){
 jQuery('.page1').click(function(){
 jQuery('.about1').show();jQuery('.about1-link').show();
-jQuery('.about1-1').hide();
 jQuery('.about1-2').hide();
 jQuery('.about1-3').hide();
 jQuery('.about1-4').hide();
@@ -195,19 +169,8 @@ jQuery('.about3').hide();
 jQuery('.window').scrollTo(0,0);
 return false;
 });
-jQuery('.page1-1').click(function(){
-jQuery('.about1').show();jQuery('.about1-link').show();
-jQuery('.about1-1').show();
-jQuery('.about1-2').hide();
-jQuery('.about1-3').hide();
-jQuery('.about1-4').hide();
-jQuery('.about2').hide();
-jQuery('.about3').hide();
-return false;
-});
 jQuery('.page1-2').click(function(){
 jQuery('.about1').show();jQuery('.about1-link').show();
-jQuery('.about1-1').hide();
 jQuery('.about1-2').show();
 jQuery('.about1-3').hide();
 jQuery('.about1-4').hide();
@@ -217,7 +180,6 @@ return false;
 });
 jQuery('.page1-3').click(function(){
 jQuery('.about1').show();jQuery('.about1-link').show();
-jQuery('.about1-1').hide();
 jQuery('.about1-2').hide();
 jQuery('.about1-3').show();
 jQuery('.about1-4').hide();
@@ -227,7 +189,6 @@ return false;
 });
 jQuery('.page1-4').click(function(){
 jQuery('.about1').show();jQuery('.about1-link').show();
-jQuery('.about1-1').hide();
 jQuery('.about1-2').hide();
 jQuery('.about1-3').hide();
 jQuery('.about1-4').show();
@@ -237,7 +198,6 @@ return false;
 });
 jQuery('.page2').click(function(){
 jQuery('.about1').hide();
-jQuery('.about1-1').hide();
 jQuery('.about1-2').hide();
 jQuery('.about1-3').hide();
 jQuery('.about1-4').hide();
@@ -249,7 +209,6 @@ return false;
 });
 jQuery('.page3').click(function(){
 jQuery('.about1').hide();
-jQuery('.about1-1').hide();
 jQuery('.about1-2').hide();
 jQuery('.about1-3').hide();
 jQuery('.about1-4').hide();

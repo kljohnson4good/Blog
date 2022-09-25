@@ -191,11 +191,11 @@ date_stop <- max(dt_comb$Date)
 <font size = 5, color = "black">
 From `r format(date_start_bod,"%m/%d/%Y")` to `r format(date_stop_bod,"%m/%d/%Y")`:
 </font>
+
 <font size = 5, color = "red">
 
-|BOD Summary          |                        |
+|BOD Summary          |All Activity Types  |
 |:------------------  | ---------------------------- |
-| Total Calories:           | `r bod_cals` (~ `r bod_lbs` lbs @3500 cals per lb)          |
 | Total #Workouts: | `r total_workouts`     |
 | Total Time:               | `r total_time` min (`r total_time_h` hrs) |
 | Avg #Workouts per week:   | `r avg_workout_per_week`                  |
@@ -205,11 +205,13 @@ From `r format(date_start_bod,"%m/%d/%Y")` to `r format(date_stop_bod,"%m/%d/%Y"
 <font size = 5, color = "black">
 From `r format(date_start,"%m/%d/%Y")` to `r format(date_stop,"%m/%d/%Y")`:
 </font>
+
 <font size = 5, color = "red">
 
-|BOD with Watch Data |                        |
+|BOD with Watch Data |Cardio Activity Types only |
 |:------------------  | ---------------------------- |
 | Total #Workouts:     | `r total_workouts_tracked`         |
+| Total Calories:           | `r bod_cals` (~ `r bod_lbs` lbs @3500 cals per lb)          |
 | Heart rate:                | `r max_hr` (avg max), `r avg_hr` (overall avg) |
 | calories burned per min:   | `r avg_cal_per_min` (avg)          |
 
