@@ -28,7 +28,7 @@ I consider myself to be multi-faceted in most aspects of my life, hardly settlin
 
 Applied to my career, my multi-dimensional interests have enabled me to go deep as a software developer, as well as exercise leadership by achieving big goals through the coordination of team efforts.  My wide focus helps me to see interdependencies and bring cross-functional teams together synergystically to solve problems.
 
-I am a hard core **introvert** and my #1 strengh according to my [strength assessment](https://www.viacharacter.org/) is **Humility**.  As an athlete I pretty much had to be dragged onto an awards podium and I hated pictures (good thing nobody had cell phones in those days!).  Even holding eye contact with other people can feel uncomfortable.  Growing up, these traits can feel like weaknesses, but over time I am learning how to turn them into strengths.  For example, I don't pretend to have all the answers, and I love learning and sharing the stage with others and seeing them rise above their own limiting beliefs.
+I am an **introvert**, and my #1 strengh according to [strength assessment](https://www.viacharacter.org/) is **Humility**.  As an athlete I pretty much had to be dragged onto an awards podium and I hated pictures (good thing nobody had cell phones in those days!).  Even holding eye contact with other people can feel uncomfortable.  Growing up, these traits can feel like weaknesses, but over time I am learning how to turn them into strengths.  For example, I don't pretend to have all the answers, and I love learning and sharing the stage with others and seeing them rise above their own limiting beliefs.
 
 </span> 
 
