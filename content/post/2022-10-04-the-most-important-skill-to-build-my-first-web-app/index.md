@@ -71,6 +71,12 @@ This picture shows the correctly generated element in Figma on the right, and th
   <img src="./resources/Poor_Figma_Import.PNG" alt="drawing" style="width:800px;"/>
 </p>
 
+Another issue was using the Autenentication feature of Amplify which added a required Address, however didn't render the form with the field and put the user into a state of impossible login as shown below.
+
+<p align="left">
+  <img src="./resources/SignIn_MissingAddressField.PNG" alt="drawing" style="width:800px;"/>
+</p>
+
 # Conclusion: It's Ugly
 
 If I had allowed myself more time, I may have started learning web development from the beginning, similar to how structured classes are taught.  This probably would have saved a lot of frustration.  However my goal is to create an MVP (Minimum Viable Product) quickly and get to rapid prototyping.  I don't want to spend months going through all the background that is probably required.
