@@ -14,7 +14,7 @@ title: About
 Kristi Johnson
 </font>
 <br/>
-Data Scientist, Programmer, Engineer, Manager, Mentor, Dog Mom
+Data Scientist, Software Programmer, Engineer, Mentor, Dog Mom
 <br/>
 Born/Live: California, USA
 <br/>
