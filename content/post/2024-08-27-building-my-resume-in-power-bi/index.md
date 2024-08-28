@@ -13,9 +13,8 @@ tags: [Visualization]
 I was looking for fun project to demonstrate Power BI interactive visualizations and decided to create my resume and host it within this blog site.
 
 # Live Dashboard
-Hosted on Microsoft cloud in my personal workspace.
-Displayed here using iframe.
-<font color="red">click the button to sign in to Power BI to view</font>
+<font color="red">click the button to sign in to Power BI to view</font>.
+May require changing to Desktop view if on a mobile device.
 
 <iframe title="PowerBI_Resume" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=47f05259-f820-46c0-9508-d9c1e5f96c89&autoAuth=true&ctid=fa157908-e648-4ecd-9aa6-3ee1669fff5e" frameborder="0" allowFullScreen="true"></iframe>
 
@@ -25,7 +24,7 @@ If you don't have a Power BI account and therefore can't see the interactive das
 
 <p align="center">
  <img src="./resources/PowerBIResume_Screenshot1.jpg" alt="drawing" width="700" />
- </br><font size=1>image 2. Dashboard Screenshot</font>
+ </br><font size=1>image 1. Dashboard Screenshot</font>
 </p>
 
 ## The Layout
