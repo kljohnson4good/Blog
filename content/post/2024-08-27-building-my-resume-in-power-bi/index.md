@@ -85,3 +85,11 @@ A Pro license is required to publish the report to Microsoft's cloud workspace (
 # Summary
 
 A standard resume is typically 1-2 pages, and the best practices indicate to limit to the last 10 years of experiences.  For those like myself with more than 10 years of experience, an interactive dashboard like Power BI can enable users to see the entire time frame at a glance, and focus only the time periods of interest.
+
+<u>Challenges</u>
+<br/>
+Although Power BI is a free application, one downside is the complexity required to share with others.  When shared using a work or educational organization where viewers have proper licenses, it is fairly easy.  However enabling my individual account to allow a public embed code proved to be much more difficult.  These security measures are the reason users must login before the interactive dashboard can be displayed.
+
+<u>Credits</u>
+<br/>
+Thanks to Fernan (Jan 4, 2023) "How to create a CV / RESUME as a POWER BI REPORT from START to FINISH" [Video]. You Tube. https://youtu.be/k0JU5YtXv0E?si=qOcuTnzyDtU7Xrs8.
